@@ -27,7 +27,7 @@
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Reach" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
         <EntityContainer Name="ReachContainer" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="VideoSet" EntityType="Reach.Video" />
-        </EntityContainer>
+          </EntityContainer>
         <EntityType Name="Video">
           <Key>
             <PropertyRef Name="Id" />
@@ -41,7 +41,7 @@
           <Property Name="Customer" Type="String" Nullable="true" />
           <Property Name="Rank" Type="Int32" Nullable="true" />
         </EntityType>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
