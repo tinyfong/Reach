@@ -50,7 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseEntity.cs" />
+    <Compile Include="IBaseEntity.cs" />
     <Compile Include="CustomEntities.cs" />
     <Compile Include="Model\VideoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

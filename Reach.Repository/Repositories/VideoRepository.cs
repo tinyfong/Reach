@@ -7,11 +7,7 @@ using System.Threading.Tasks;
 namespace Reach.Repository.Repositories
 {
     public class VideoRepository : BaseRepository<Video>
-    {
-        public Video GetById()
-        {
-            return this.Select(1);
-        }
+    {     
         public List<Video> SelectRecent()
         {
             using (ReachContainer db = new ReachContainer())

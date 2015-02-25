@@ -8,6 +8,6 @@ namespace Reach.Repository
 {
     public class IBaseEntity
     {
-        public int Id { get; set; }     
+        public int Id { get; set; }
     }
 }
