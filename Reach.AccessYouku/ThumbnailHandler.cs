@@ -24,6 +24,13 @@ namespace Reach.AccessYouku
             }
         }
 
+        public string GetThumbnailUrl(string youkuId)
+        {
+            string url = "http://events.youku.com/global/api/video-thumb.php?vid={0}";
+
+            return string.Format(url, youkuId);
+        }
+
         public Image GetBigThumbnail(string url)
         {
             string imgUrl = this.GetBigThumbnailUrl(url);
@@ -35,7 +42,8 @@ namespace Reach.AccessYouku
                 Image img = Image.FromStream(ms);
                 return img;
             }
-
         }
+
+
     }
 }
