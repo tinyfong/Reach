@@ -11,7 +11,7 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            NewtonJsonTest t = new NewtonJsonTest();
+            var t = new CodeFirstTest();
             t.Run();
        
         }
