@@ -1,0 +1,64 @@
+﻿@model Reach.Models.Video
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Video</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.YoukuId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.YoukuId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Url)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Url)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UpdateTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UpdateTime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Customer)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Customer)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Rank)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Rank)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
