@@ -332,7 +332,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\_ReachLayout.cshtml" />
     <Content Include="Views\Saturday\Index.cshtml" />
-    <Content Include="Views\Shared\_html5shiv.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
