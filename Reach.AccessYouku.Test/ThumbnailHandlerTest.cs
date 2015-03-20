@@ -6,7 +6,8 @@ namespace Reach.AccessYouku.Test
     [TestClass]
     public class ThumbnailHandlerTest
     {
-        string url = "http://v.youku.com/player/getPlayList/VideoIDS/XODg3ODYwODgw";
+        //string url = "http://v.youku.com/player/getPlayList/VideoIDS/XODg3ODYwODgw";
+        string youkuId = "XODg3ODYwODgw";
 
         [TestMethod]
         public void TestGetBigThumbnailUrl()
@@ -15,8 +16,8 @@ namespace Reach.AccessYouku.Test
             string expected = "http://g4.ykimg.com/11270F1F4654DAD3ABB00E000000005A574927-F407-8F61-9BB2-D0D42EC06283";
 
 
-            ThumbnailHandler handler = new ThumbnailHandler();
-            string back = handler.GetBigThumbnailUrl(url);
+            YoukuThumbnailHandler handler = new YoukuThumbnailHandler();
+            string back = handler.GetBigThumbnailUrl(youkuId);
 
             Assert.AreEqual<string>(back, expected);
         }
@@ -24,9 +25,17 @@ namespace Reach.AccessYouku.Test
         [TestMethod]
         public void TestGetBigThumbnail()
         {
-            ThumbnailHandler handler = new ThumbnailHandler();
-            var back = handler.GetBigThumbnail(url);
-            Assert.IsNotNull(true);
+            YoukuThumbnailHandler handler = new YoukuThumbnailHandler();
+            var back = handler.GetBigThumbnailByYoukuId(youkuId);
+            Assert.IsNotNull(back);
+        }
+
+        [TestMethod]
+        public void TestGetThumbnail()
+        {
+            YoukuThumbnailHandler handler = new YoukuThumbnailHandler();
+            var back = handler.GetThumbnailByYoukuId(youkuId);
+            Assert.IsNotNull(back);
         }
     }
 }
