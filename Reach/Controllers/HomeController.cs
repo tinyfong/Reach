@@ -14,14 +14,19 @@ namespace Reach.Controllers
     {
         VideoContext db = new VideoContext();
 
-        public ActionResult Index()
+        [HttpGet]
+        public ActionResult Index(int videoId = 0)
         {
-            var topVideo = db.Set<Video>().Where(x => x.Rank == 1).OrderByDescending(x => x.UpdateTime).FirstOrDefault();
+            Video topVideo = null;
+
+            topVideo = db.Set<Video>().Find(videoId);
+            if (topVideo == null)
+            {
+                topVideo = db.Set<Video>().Where(x => x.Rank == 1).OrderByDescending(x => x.UpdateTime).FirstOrDefault();
+            }
             ViewBag.TopVideo = topVideo;
 
-            var videoList = db.Set<Video>().Where(x => x.Rank == 2).OrderByDescending(x => x.UpdateTime).ToList
-                ();
-
+            var videoList = db.Set<Video>().Where(x => x.Rank == 2).OrderByDescending(x => x.UpdateTime).ToList();
             YoukuThumbnailHandler handler = new YoukuThumbnailHandler();
             foreach (var item in videoList)
             {
