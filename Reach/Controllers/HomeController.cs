@@ -33,6 +33,9 @@ namespace Reach.Controllers
                 }
                 if (item.Thumbnail == null)
                 {
+                    var image = handler.GetThumbnailByYoukuId(item.YoukuId);
+                    item.Thumbnail = image;
+                    db.Entry<Video>(item).State = EntityState.Modified;
                 }
             }
 
