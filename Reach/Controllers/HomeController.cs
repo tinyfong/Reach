@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Reach.DAL;
 using Reach.Models;
-using Reach.AccessYouku;
+using Reach.AccessVideoSupplier;
 using System.Data.Entity;
 
 namespace Reach.Controllers

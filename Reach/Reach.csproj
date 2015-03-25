@@ -186,6 +186,12 @@
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Reach.AccessVideoSupplier\Reach.AccessVideoSupplier.csproj">
+      <Project>{f28f1217-2b17-4ed8-86a8-b6976d602810}</Project>
+      <Name>Reach.AccessVideoSupplier</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

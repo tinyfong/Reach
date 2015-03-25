@@ -99,6 +99,12 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Reach.AccessVideoSupplier\Reach.AccessVideoSupplier.csproj">
+      <Project>{f28f1217-2b17-4ed8-86a8-b6976d602810}</Project>
+      <Name>Reach.AccessVideoSupplier</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

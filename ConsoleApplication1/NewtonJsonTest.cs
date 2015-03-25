@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Reach.AccessYouku.Model;
+using Reach.AccessVideoSupplier.Model;
 using Newtonsoft.Json;
 using System.Net;
 
@@ -17,7 +17,7 @@ namespace ConsoleApplication1
             {
                 string url = "http://v.youku.com/player/getPlayList/VideoIDS/XODg3ODYwODgw";
                 string s = c.DownloadString(url);
-                Video v = JsonConvert.DeserializeObject<Video>(s);
+                YoukuVideo v = JsonConvert.DeserializeObject<YoukuVideo>(s);
                             
             }
 
