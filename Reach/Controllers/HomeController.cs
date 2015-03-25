@@ -17,8 +17,8 @@ namespace Reach.Controllers
         [HttpGet]
         public ActionResult Index(int videoId = 0)
         {
+            // Top Video
             Video topVideo = null;
-
             topVideo = db.Set<Video>().Find(videoId);
             if (topVideo == null)
             {
@@ -26,7 +26,8 @@ namespace Reach.Controllers
             }
             ViewBag.TopVideo = topVideo;
 
-            var videoList = db.Set<Video>().Where(x => x.Rank == 2).OrderByDescending(x => x.UpdateTime).ToList();
+            // Vedio List
+            var videoList = db.Set<Video>().Where(x => x.Id != topVideo.Id).OrderBy(x => x.Rank).ThenByDescending(x => x.UpdateTime).ToList();
             YoukuThumbnailHandler handler = new YoukuThumbnailHandler();
             foreach (var item in videoList)
             {
