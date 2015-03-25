@@ -87,10 +87,6 @@
       <Project>{7f32c746-201d-4cb3-a495-00c19a49bf76}</Project>
       <Name>Reach.AccessYouku</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Reach.Repository\Reach.Repository.csproj">
-      <Project>{37416c02-c952-4594-becd-99b9785567b1}</Project>
-      <Name>Reach.Repository</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
