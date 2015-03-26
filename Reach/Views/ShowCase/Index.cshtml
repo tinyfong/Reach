@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var videoList = ViewBag.VideoList as List<Video>;
+}
+
+@section scripts {
+    <script>
+        $('#myModal').on('show.bs.modal', function (e) {
+            var invoker = $(e.relatedTarget);
+            alert($(invoker).attr('href'));
+        });
+    </script>
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-3">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h3>视频分类</h3></div>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="#"><span class="h4">全部</span></a><span class="badge">新</span></li>
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="col-xs-9">
+            @foreach (var video in videoList)
+            {
+                <div class="col-xs-3">
+                    <a href="#" class="thumbnail" data-toggle="modal"
+                       data-target="#myModal">
+                        <img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(video.BigThumbnail))"
+                             alt="">
+                    </a>
+                    <div class="caption">
+                        <h6 class="text-center">@video.Name</h6>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+</div>
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    模态框（Modal）标题
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="embed-responsive embed-responsive-4by3">
+
+                    <iframe src="" frameborder="0" allowfullscreen="1" autoplay></iframe>
+                </div>
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+<style>
+    .modal-dialog {
+        width: 75%;
+    }
+</style>
