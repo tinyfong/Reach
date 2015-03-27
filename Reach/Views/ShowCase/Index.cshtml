@@ -1,6 +1,6 @@
 ﻿@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "案例展示";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
     var videoList = ViewBag.VideoList as List<Video>;
 }
 
@@ -28,19 +28,21 @@
         </div>
 
         <div class="col-xs-9">
-            @foreach (var video in videoList)
-            {
-                <div class="col-xs-3">
-                    <a href="#" class="thumbnail" data-toggle="modal"
-                       data-target="#myModal" data-url="@video.Url">
-                        <img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(video.BigThumbnail))"
-                             alt="">
-                    </a>
-                    <div class="caption">
-                        <h6 class="text-center">@video.Name</h6>
+            <div class="row">
+                @foreach (var video in videoList)
+                {
+                    <div class="col-xs-4">
+                        <a href="#" class="thumbnail" data-toggle="modal"
+                           data-target="#myModal" data-url="@video.Url">
+                            <img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(video.BigThumbnail))"
+                                 alt="">
+                        </a>
+                        <div class="caption">
+                            <h6 class="text-center">@video.Name</h6>
+                        </div>
                     </div>
-                </div>
-            }
+                }
+            </div>
         </div>
     </div>
 

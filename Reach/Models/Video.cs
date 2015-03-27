@@ -4,12 +4,12 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Drawing;
+using Reach.AccessVideoSupplier;
 
 namespace Reach.Models
 {
-    public class Video
+    public class Video : Entity
     {
-        public int Id { get; set; }
         public string YoukuId { get; set; }
         public string Name { get; set; }
         public string Url { get; set; }
@@ -17,7 +17,9 @@ namespace Reach.Models
         public DateTime UpdateTime { get; set; }
         public string Customer { get; set; }
         public Nullable<int> Rank { get; set; }
+
         public virtual byte[] BigThumbnail { get; set; }
+
         public virtual byte[] Thumbnail { get; set; }
     }
 }

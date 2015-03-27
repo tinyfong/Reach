@@ -6,10 +6,8 @@ using System.Web;
 
 namespace Reach.Models
 {
-    public class UserProfile
+    public class UserProfile : Entity
     {
-      
-        public int Id { get; set; }
 
         [Required]
         [Display(Name = "用户名")]
@@ -22,6 +20,6 @@ namespace Reach.Models
 
         [Display(Name = "记住我")]
         public bool RememberMe { get; set; }
-      
+
     }
 }

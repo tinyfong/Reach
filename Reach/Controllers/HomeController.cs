@@ -27,7 +27,9 @@ namespace Reach.Controllers
             ViewBag.TopVideo = topVideo;
 
             // Vedio List
-            var videoList = db.Set<Video>().Where(x => x.Id != topVideo.Id).OrderBy(x => x.Rank).ThenByDescending(x => x.UpdateTime).ToList();
+            var videoList = db.Set<Video>().Where(x => x.Id != topVideo.Id).Take(4).OrderBy(x => x.Rank).ThenByDescending(x => x.UpdateTime).ToList();
+
+            // Load Thumbnail
             YoukuThumbnailHandler handler = new YoukuThumbnailHandler();
             foreach (var item in videoList)
             {
