@@ -7,8 +7,9 @@
 @section scripts {
     <script>
         $('#myModal').on('show.bs.modal', function (e) {
-            var invoker = $(e.relatedTarget);
-            alert($(invoker).attr('href'));
+            var $invoker = $(e.relatedTarget);
+            var $url = $($invoker).attr('data-url')
+            $('#player').attr('src', $url);
         });
     </script>
 }
@@ -20,7 +21,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading"><h3>视频分类</h3></div>
                 <ul class="list-group">
-                    <li class="list-group-item"><a href="#"><span class="h4">全部</span></a><span class="badge">新</span></li>
+                    <li class="list-group-item"><a href="@Url.Action("Index", "Showcase")"><span class="h4">全部</span></a><span class="badge">新</span></li>
                 </ul>
 
             </div>
@@ -31,7 +32,7 @@
             {
                 <div class="col-xs-3">
                     <a href="#" class="thumbnail" data-toggle="modal"
-                       data-target="#myModal">
+                       data-target="#myModal" data-url="@video.Url">
                         <img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(video.BigThumbnail))"
                              alt="">
                     </a>
@@ -61,8 +62,7 @@
             </div>
             <div class="modal-body">
                 <div class="embed-responsive embed-responsive-4by3">
-
-                    <iframe src="" frameborder="0" allowfullscreen="1" autoplay></iframe>
+                    <iframe id="player" src="" frameborder="0" allowfullscreen="1"></iframe>
                 </div>
             </div>
             <div class="modal-footer">

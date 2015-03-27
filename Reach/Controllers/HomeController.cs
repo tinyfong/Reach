@@ -12,7 +12,7 @@ namespace Reach.Controllers
 {
     public class HomeController : Controller
     {
-        VideoContext db = new VideoContext();
+        ReachContext db = new ReachContext();
 
         [HttpGet]
         public ActionResult Index(int videoId = 0)

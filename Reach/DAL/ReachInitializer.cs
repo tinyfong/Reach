@@ -7,10 +7,11 @@ using Reach.Models;
 
 namespace Reach.DAL
 {
-    public class VideoInitializer : DropCreateDatabaseIfModelChanges<VideoContext>
+    public class ReachInitializer : DropCreateDatabaseIfModelChanges<ReachContext>
     {
-        protected override void Seed(VideoContext context)
+        protected override void Seed(ReachContext context)
         {
+            #region Add Videos
             var v1 = new Video()
             {
 
@@ -70,11 +71,39 @@ namespace Reach.DAL
                 Customer = "Youku",
                 UpdateTime = new DateTime(2015, 3, 1)
             };
+
+            var v6 = new Video
+            {
+
+                Name = "《超能陆战队》台湾正式版预告片",
+                Description = "未来世界的超级都市旧京山，一个热爱发明创造的天才少年小宏（瑞恩·波特 饰），在哥哥泰迪（丹尼尔·海尼 饰）的鼓励下参加了罗伯特·卡拉汉教授（詹姆斯·克伦威尔 饰）主持的理工学院机器人专业的入学大赛。他凭借神奇的微型磁力机器人赢得观众、参赛者以及考官的一致好评，谁知突如其来的灾难却将小宏的梦想和人生毁 于一旦。大火烧毁了展示会场，而哥哥为了救出受困的卡拉汉教授命丧火场。身心饱受创伤的小宏闭门不出，哥哥生前留下的治疗型机器人大白（斯科特·埃德希特 饰）则成为安慰他的唯一伙伴。原以为微型机器人也毁于火灾，谁知小宏和大白竟意外发现有人在某座废弃工厂内大批量地生产他的发明。 　　稍后哥哥的朋友们弗雷德（T·J·米勒 饰）等人也加入进来，他们穿上小宏发明的超级战士战斗装备，和怀有险恶阴谋的神秘对手展开较量。",
+                YoukuId = "XODEzODI3NDky",
+                Url = "http://player.youku.com/embed/XODEzODI3NDky",
+                Rank = 2,
+                Customer = "Youku",
+                UpdateTime = new DateTime(2015, 4, 1)
+            };
+
             var videos = new List<Video>() {
-            v1,v2,v3,v4,v5
+            v1,v2,v3,v4,v5,v6
             };
 
             videos.ForEach(x => context.Videos.Add(x));
+            #endregion
+
+            //#region Add UserProfiles
+            //var u1 = new UserProfile()
+            //{
+            //    UserName = "admin",
+            //    Password = "1"
+            //};
+            //var userProfiles = new List<UserProfile>() {
+            // u1
+            //};
+            //userProfiles.ForEach(x => context.UserProfiles.Add(x));
+
+            //#endregion
+
             context.SaveChanges();
         }
 

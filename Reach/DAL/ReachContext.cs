@@ -7,17 +7,20 @@ using Reach.Models;
 
 namespace Reach.DAL
 {
-    public class VideoContext : DbContext
+    public class ReachContext : DbContext
     {
-        public VideoContext()
-            : base("VideoContext")
+        public ReachContext()
+            : base("ReachContext")
         {
 
         }
 
         public DbSet<Video> Videos { get; set; }
+
+        public DbSet<UserProfile> UserProfiles { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {           
+        {
             base.OnModelCreating(modelBuilder);
         }
     }

@@ -12,7 +12,7 @@ namespace Reach.Controllers
 {
     public class VideoController : Controller
     {
-        private VideoContext db = new VideoContext();
+        private ReachContext db = new ReachContext();
 
         //
         // GET: /Video/

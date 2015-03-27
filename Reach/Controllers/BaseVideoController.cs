@@ -12,7 +12,7 @@ namespace Reach.Controllers
     {
         //
         // GET: /BaseVideo/
-        protected VideoContext db = new VideoContext();
+        protected ReachContext db = new ReachContext();
     
         protected override void Dispose(bool disposing)
         {
