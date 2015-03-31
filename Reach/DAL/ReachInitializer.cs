@@ -92,12 +92,12 @@ namespace Reach.DAL
             #endregion
 
             #region Add UserProfiles
-            var u1 = new UserProfile()
+            var u1 = new User()
             {
                 UserName = "admin",
                 Password = "1"
             };
-            var userProfiles = new List<UserProfile>() {
+            var userProfiles = new List<User>() {
              u1
             };
             userProfiles.ForEach(x => context.UserProfiles.Add(x));

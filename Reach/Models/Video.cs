@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Drawing;
 using Reach.AccessVideoSupplier;
+using Reach.Core;
 
 namespace Reach.Models
 {

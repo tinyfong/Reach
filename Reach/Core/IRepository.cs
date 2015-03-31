@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Web;
 
-namespace Reach.Repository
+namespace Reach.Core
 {
     public interface IRepository<T>
     {
@@ -18,7 +18,6 @@ namespace Reach.Repository
 
         void Save();
 
-        void Delete(T o);
-
+        void Delete(T o);      
     }
 }

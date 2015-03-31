@@ -8,6 +8,7 @@ using Reach.Models;
 using Reach.AccessVideoSupplier;
 using System.Data.Entity;
 using Reach.Repository;
+using Reach.Core;
 
 namespace Reach.Controllers
 {

@@ -17,7 +17,7 @@ namespace Reach.DAL
 
         public DbSet<Video> Videos { get; set; }
 
-        public DbSet<UserProfile> UserProfiles { get; set; }
+        public DbSet<User> UserProfiles { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

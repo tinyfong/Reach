@@ -8,14 +8,21 @@ using Reach.DAL;
 using System.Web.Security;
 using Reach.Repository;
 using Reach.DTO;
+using Reach.Core;
+using Reach.Services;
 
 namespace Reach.Controllers
 {
     [Authorize]
     public class AccountController : Controller
     {
+        private readonly IFormsAuthentication formsAuth;
+        private readonly IUserservice userService;
 
-        private readonly IRepository<UserProfile> repo = new Repository<UserProfile>();
+        public AccountController()
+        {
+            formsAuth = new FormAuthService();
+        }
 
         public ActionResult Index()
         {
@@ -38,22 +45,20 @@ namespace Reach.Controllers
                 if (!ModelState.IsValid)
                 {
                     input.Password = null;
-                    input.UserName = null;
+
                     return View(input);
                 }
 
-                if (ModelState.IsValid)
+                var user = userService.Get(input.UserName, input.Password);
+                if (user == null)
                 {
-                    var user = db.UserProfiles.FirstOrDefault(x => x.UserName == input.UserName && x.Password == input.Password);
-                    if (user != null && user.Id > 0)
-                    {
-                        FormsAuthentication.SetAuthCookie(user.UserName, user.RememberMe);
-                        return RedirectToLocal(returnUrl);
-                    }
+                    ModelState.AddModelError("", "用户名或密码不正确");
+                    return View(input);
                 }
 
-                ModelState.AddModelError("", "用户名或密码不正确");
-                return View(input);
+                formsAuth.SignIn(user.UserName, input.RememberMe, user.Roles.Select(x => x.Name));
+                return RedirectToLocal(returnUrl);
+
             }
         }
 

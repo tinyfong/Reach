@@ -5,6 +5,7 @@ using System.Web;
 using Reach.Models;
 using Reach.DAL;
 using System.Linq.Expressions;
+using Reach.Core;
 
 namespace Reach.Repository
 {
@@ -30,12 +31,15 @@ namespace Reach.Repository
 
         public IQueryable<T> Where(Expression<Func<T, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return db.Set<T>().Where(predicate);
         }
 
         public T Insert(T o)
         {
-            throw new NotImplementedException();
+            var t = db.Set<T>().Create();
+            t.Id = o.Id;
+            db.Set<T>().Add(t);
+            return t;
         }
 
         public void Save()
@@ -45,7 +49,7 @@ namespace Reach.Repository
 
         public void Delete(T o)
         {
-            throw new NotImplementedException();
+            db.Set<T>().Remove(o);
         }
     }
 }

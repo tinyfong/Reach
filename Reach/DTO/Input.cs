@@ -13,13 +13,15 @@ namespace Reach.DTO
 
     public class SignInInput
     {
-        [Required(ErrorMessageResourceName = "required")]
-
+        [Required]
+        [Display(Name = "用户名")]
+        [UIHint("用户名")]
         public string UserName { get; set; }
 
-        [Required(ErrorMessageResourceName = "required")]
-        [UIHint("Password")]
-
+        [Required]
+        [DataType(DataType.Password)]
+        [Display(Name = "密码")]
+        [UIHint("密码")]
         public string Password { get; set; }
 
         public bool RememberMe { get; set; }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Reach.Models
+namespace Reach.Core
 {
-    public class Entity
+    public abstract class Entity
     {
         public int Id { get; set; }
     }
