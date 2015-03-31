@@ -6,14 +6,16 @@ using System.Web;
 using System.Web.Mvc;
 using Reach.DAL;
 using System.Web.Security;
+using Reach.Repository;
+using Reach.DTO;
 
 namespace Reach.Controllers
 {
     [Authorize]
-    public class AdminController : Controller
+    public class AccountController : Controller
     {
-        //
-        // GET: /Admin/
+
+        private readonly IRepository<UserProfile> repo = new Repository<UserProfile>();
 
         public ActionResult Index()
         {
@@ -21,27 +23,37 @@ namespace Reach.Controllers
         }
 
         [AllowAnonymous]
+        [HttpGet]
         public ActionResult Login()
         {
             return View();
         }
 
-        public ActionResult Login(UserProfile model, string returnUrl)
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult Login(SignInInput input, string returnUrl)
         {
             using (ReachContext db = new ReachContext())
             {
+                if (!ModelState.IsValid)
+                {
+                    input.Password = null;
+                    input.UserName = null;
+                    return View(input);
+                }
+
                 if (ModelState.IsValid)
                 {
-                    var user = db.UserProfiles.FirstOrDefault(x => x.UserName == model.UserName && x.Password == model.Password);
+                    var user = db.UserProfiles.FirstOrDefault(x => x.UserName == input.UserName && x.Password == input.Password);
                     if (user != null && user.Id > 0)
                     {
-                        FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
+                        FormsAuthentication.SetAuthCookie(user.UserName, user.RememberMe);
                         return RedirectToLocal(returnUrl);
                     }
                 }
 
                 ModelState.AddModelError("", "用户名或密码不正确");
-                return View(model);
+                return View(input);
             }
         }
 
@@ -59,7 +71,8 @@ namespace Reach.Controllers
 
         private ActionResult DefaultAction()
         {
-            return RedirectToAction("Index", "Admin");
+            return RedirectToAction("Index", "Account");
         }
+
     }
 }

@@ -19,12 +19,13 @@ namespace Reach.Repository
 
         public T Get(int id)
         {
-            throw new NotImplementedException();
+            var entity = db.Set<T>().Find(id);
+            return entity;
         }
 
         public virtual IQueryable<T> GetAll()
         {
-            throw new NotImplementedException();
+            return db.Set<T>();
         }
 
         public IQueryable<T> Where(Expression<Func<T, bool>> predicate)

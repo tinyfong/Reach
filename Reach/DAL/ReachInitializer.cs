@@ -91,18 +91,18 @@ namespace Reach.DAL
             videos.ForEach(x => context.Videos.Add(x));
             #endregion
 
-            //#region Add UserProfiles
-            //var u1 = new UserProfile()
-            //{
-            //    UserName = "admin",
-            //    Password = "1"
-            //};
-            //var userProfiles = new List<UserProfile>() {
-            // u1
-            //};
-            //userProfiles.ForEach(x => context.UserProfiles.Add(x));
+            #region Add UserProfiles
+            var u1 = new UserProfile()
+            {
+                UserName = "admin",
+                Password = "1"
+            };
+            var userProfiles = new List<UserProfile>() {
+             u1
+            };
+            userProfiles.ForEach(x => context.UserProfiles.Add(x));
 
-            //#endregion
+            #endregion
 
             context.SaveChanges();
         }
