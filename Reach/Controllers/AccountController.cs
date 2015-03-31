@@ -22,6 +22,7 @@ namespace Reach.Controllers
         public AccountController()
         {
             formsAuth = new FormAuthService();
+            userService = new UserService();
         }
 
         public ActionResult Index()
@@ -40,26 +41,22 @@ namespace Reach.Controllers
         [HttpPost]
         public ActionResult Login(SignInInput input, string returnUrl)
         {
-            using (ReachContext db = new ReachContext())
+            if (!ModelState.IsValid)
             {
-                if (!ModelState.IsValid)
-                {
-                    input.Password = null;
+                input.Password = null;
 
-                    return View(input);
-                }
-
-                var user = userService.Get(input.UserName, input.Password);
-                if (user == null)
-                {
-                    ModelState.AddModelError("", "用户名或密码不正确");
-                    return View(input);
-                }
-
-                formsAuth.SignIn(user.UserName, input.RememberMe, user.Roles.Select(x => x.Name));
-                return RedirectToLocal(returnUrl);
-
+                return View(input);
             }
+
+            var user = userService.Get(input.UserName, input.Password);
+            if (user == null)
+            {
+                ModelState.AddModelError("", "用户名或密码不正确");
+                return View(input);
+            }
+
+            formsAuth.SignIn(user.UserName, input.RememberMe, user.Roles.Select(x => x.Name));
+            return RedirectToLocal(returnUrl);
         }
 
         private ActionResult RedirectToLocal(string returnUrl)

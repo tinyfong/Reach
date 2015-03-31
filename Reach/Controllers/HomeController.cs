@@ -9,6 +9,7 @@ using Reach.AccessVideoSupplier;
 using System.Data.Entity;
 using Reach.Repository;
 using Reach.Core;
+using Reach.Services;
 
 namespace Reach.Controllers
 {
@@ -16,7 +17,7 @@ namespace Reach.Controllers
     {
 
         ReachContext db = new ReachContext();
-        private readonly IRepository<Video> repo = new Repository<Video>();
+        readonly IRepository<Video> repo = new Repository<Video>();      
 
         [HttpGet]
         public ActionResult Index(int videoId = 0)

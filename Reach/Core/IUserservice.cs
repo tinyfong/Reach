@@ -8,8 +8,8 @@ namespace Reach.Core
 {
     public interface IUserservice:ICrudService<User>
     {
-        bool IsUnique(string login);
+        bool IsUnique(string userName);
         void ChangePassword(int id, string password);
-        User Get(string Login, string password);
+        User Get(string userName, string password);
     }
 }

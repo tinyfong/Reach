@@ -17,6 +17,7 @@ namespace Reach.Services
             var authTicket = new FormsAuthenticationTicket(1, userName, DateTime.Now, DateTime.Now.AddDays(30), isPersisient, userData, "/");
 
             var cookie = new HttpCookie(FormsAuthentication.FormsCookieName, FormsAuthentication.Encrypt(authTicket));
+        
 
             if (authTicket.IsPersistent)
             {

@@ -148,6 +148,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Core\IRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Services\VideoService.cs" />
     <Compile Include="Services\CrudService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Services\FormAuthService.cs" />

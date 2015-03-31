@@ -16,7 +16,7 @@ namespace Reach.Services
             repo = new Repository<T>();
         }
 
-        public int Create(T item)
+        public virtual int Create(T item)
         {
             var newItem = repo.Insert(item);
             repo.Save();
