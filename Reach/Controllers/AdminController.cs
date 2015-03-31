@@ -14,12 +14,12 @@ using Reach.Services;
 namespace Reach.Controllers
 {
     [Authorize]
-    public class AccountController : Controller
+    public class AdminController : Controller
     {
         private readonly IFormsAuthentication formsAuth;
         private readonly IUserservice userService;
 
-        public AccountController()
+        public AdminController()
         {
             formsAuth = new FormAuthService();
             userService = new UserService();
@@ -73,7 +73,7 @@ namespace Reach.Controllers
 
         private ActionResult DefaultAction()
         {
-            return RedirectToAction("Index", "Account");
+            return RedirectToAction("Index", "Admin");
         }
 
     }
