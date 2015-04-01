@@ -18,15 +18,24 @@ namespace Reach.Controllers
     {
         private readonly IFormsAuthentication formsAuth;
         private readonly IUserservice userService;
+        private readonly IRepository<Video> repo;
 
         public AdminController()
         {
             formsAuth = new FormAuthService();
             userService = new UserService();
+            repo = new Repository<Video>();
         }
 
         public ActionResult Index()
         {
+            return RedirectToAction("Videos", "Admin");
+        }
+
+        public ActionResult Videos()
+        {
+            ViewBag.VideoList = repo.GetAll().ToList();
+
             return View();
         }
 
