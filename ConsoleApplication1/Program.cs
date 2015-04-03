@@ -10,7 +10,7 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            var t = new CodeFirstTest();
+            var t = new ValueInjecterTest();
             t.Run();
        
         }

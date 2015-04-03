@@ -10,31 +10,34 @@ using Reach.Repository;
 using Reach.DTO;
 using Reach.Core;
 using Reach.Services;
+using PagedList;
 
 namespace Reach.Controllers
 {
     [Authorize]
-    public class AdminController : Controller
+    public class AdminController : CrudController<Video, YoukuVideoInput, YoukuVideoInput>
     {
         private readonly IFormsAuthentication formsAuth;
         private readonly IUserservice userService;
         private readonly IRepository<Video> repo;
 
-        public AdminController()
+        public AdminController(ICrudService<Video> service, IMapper<Video, YoukuVideoInput> v)
+            : base(service, v, v)
         {
             formsAuth = new FormAuthService();
             userService = new UserService();
             repo = new Repository<Video>();
         }
 
-        public ActionResult Index()
+        public override ActionResult Index()
         {
             return RedirectToAction("Videos", "Admin");
         }
 
-        public ActionResult Videos()
+        public ActionResult Videos(int page = 1)
         {
-            ViewBag.VideoList = repo.GetAll().ToList();
+            var pageContent = repo.GetAll().ToList().ToPagedList(page, 5);
+            ViewBag.VideoList = pageContent;
 
             return View();
         }
@@ -85,5 +88,11 @@ namespace Reach.Controllers
             return RedirectToAction("Index", "Admin");
         }
 
+        [HttpPost]
+        [ActionName("Create")]
+        public ActionResult CreateYoukuVideo()
+        {
+            return View();
+        }
     }
 }

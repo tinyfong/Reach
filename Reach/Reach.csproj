@@ -66,6 +66,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Omu.ValueInjecter">
+      <HintPath>..\packages\valueinjecter.2.3.3\lib\net35\Omu.ValueInjecter.dll</HintPath>
+    </Reference>
     <Reference Include="PagedList">
       <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
     </Reference>
@@ -143,9 +146,11 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BaseVideoController.cs" />
+    <Compile Include="Controllers\CrudController.cs" />
     <Compile Include="Controllers\ShowcaseController.cs" />
     <Compile Include="Controllers\VideoController.cs" />
     <Compile Include="Core\ICrudService.cs" />
+    <Compile Include="Core\IMapper.cs" />
     <Compile Include="Core\IUserservice.cs" />
     <Compile Include="Core\IFormsAuthentication.cs" />
     <Compile Include="DAL\ReachContext.cs" />
@@ -155,6 +160,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Core\Entity.cs" />
+    <Compile Include="Mappers\Mapper.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Video.cs" />
@@ -215,6 +221,8 @@
     <Content Include="Views\Admin\Login.cshtml" />
     <Content Include="Views\Shared\_HomeLayout.cshtml" />
     <Content Include="Views\Admin\Videos.cshtml" />
+    <Content Include="Views\Admin\CreateYoukuVideo.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

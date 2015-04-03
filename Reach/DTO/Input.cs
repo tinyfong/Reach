@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Reach.DTO
 {
-    class Input
+    public class Input
     {
         public int Id { get; set; }
     }
@@ -26,5 +26,20 @@ namespace Reach.DTO
 
         [Display(Name = "记住我")]
         public bool RememberMe { get; set; }
+    }
+
+    public class YoukuVideoInput : Input
+    {
+        [Display(Name = "名称")]
+        public string Name { get; set; }
+        [Display(Name = "优酷ID")]
+        public string YoukuId { get; set; }
+        [Display(Name = "描述")]
+        public string Description { get; set; }
+        [Display(Name = "客户")]
+        public string Customer { get; set; }
+        [Display(Name = "等级")]
+        public Nullable<int> Rank { get; set; }
+
     }
 }

@@ -1,0 +1,10 @@
+﻿@model YoukuVideoInput
+@{
+    ViewBag.Title = "创建视频";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.EditorFor(x => x.Name);
+}
