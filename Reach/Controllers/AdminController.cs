@@ -21,6 +21,12 @@ namespace Reach.Controllers
         private readonly IUserservice userService;
         private readonly IRepository<Video> repo;
 
+        public AdminController()
+            : this(new VideoService(), new Mappers.Mapper<Video, YoukuVideoInput>())
+        {       
+
+        }
+
         public AdminController(ICrudService<Video> service, IMapper<Video, YoukuVideoInput> v)
             : base(service, v, v)
         {

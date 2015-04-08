@@ -49,6 +49,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.3.3.0\lib\net40-client\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net40\Castle.Windsor.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
@@ -153,6 +159,7 @@
     <Compile Include="Core\IMapper.cs" />
     <Compile Include="Core\IUserservice.cs" />
     <Compile Include="Core\IFormsAuthentication.cs" />
+    <Compile Include="CustomControllerFactory.cs" />
     <Compile Include="DAL\ReachContext.cs" />
     <Compile Include="DAL\ReachInitializer.cs" />
     <Compile Include="DTO\Input.cs" />
@@ -160,6 +167,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Core\Entity.cs" />
+    <Compile Include="Infrastructure\IoC.cs" />
+    <Compile Include="Infrastructure\WindsorRegistrar.cs" />
     <Compile Include="Mappers\Mapper.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\User.cs" />
@@ -172,6 +181,7 @@
     <Compile Include="Services\CrudService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Services\FormAuthService.cs" />
+    <Compile Include="WindsorConfigurator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -222,7 +232,6 @@
     <Content Include="Views\Shared\_HomeLayout.cshtml" />
     <Content Include="Views\Admin\Videos.cshtml" />
     <Content Include="Views\Admin\CreateYoukuVideo.cshtml" />
-    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

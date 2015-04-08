@@ -10,9 +10,10 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            var t = new ValueInjecterTest();
+            var t = new LockTest();
             t.Run();
-       
+
+            Console.ReadLine();
         }
     }
 }
