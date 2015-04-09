@@ -9,11 +9,11 @@ using Castle.MicroKernel.Registration;
 
 namespace Reach
 {
-    public class CustomControllerFactory : DefaultControllerFactory
+    public class WindsorControllerFactory : DefaultControllerFactory
     {
         readonly IWindsorContainer container;
 
-        public CustomControllerFactory(IWindsorContainer container)
+        public WindsorControllerFactory(IWindsorContainer container)
         {
             this.container = container;
             var controllerTypes =
@@ -21,7 +21,10 @@ namespace Reach
               where typeof(IController).IsAssignableFrom(t)
               select t;
             foreach (var t in controllerTypes)
+            {
                 container.Register(Component.For(t).LifeStyle.Transient);
+            }
+
         }
 
         protected override IController GetControllerInstance(System.Web.Routing.RequestContext requestContext, Type controllerType)

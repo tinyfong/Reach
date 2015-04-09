@@ -15,24 +15,18 @@ using PagedList;
 namespace Reach.Controllers
 {
     [Authorize]
-    public class AdminController : CrudController<Video, YoukuVideoInput, YoukuVideoInput>
+    public class AdminController : CruderController<Video, YoukuVideoInput>
     {
         private readonly IFormsAuthentication formsAuth;
-        private readonly IUserservice userService;
-        private readonly IRepository<Video> repo;
+        private readonly IUserService userService;
 
-        public AdminController()
-            : this(new VideoService(), new Mappers.Mapper<Video, YoukuVideoInput>())
-        {       
 
-        }
 
-        public AdminController(ICrudService<Video> service, IMapper<Video, YoukuVideoInput> v)
-            : base(service, v, v)
+        public AdminController(ICrudService<Video> service, IMapper<Video, YoukuVideoInput> v, IFormsAuthentication formsAuth, IUserService userService)
+            : base(service, v)
         {
-            formsAuth = new FormAuthService();
-            userService = new UserService();
-            repo = new Repository<Video>();
+            this.formsAuth = formsAuth;
+            this.userService = userService;
         }
 
         public override ActionResult Index()
@@ -42,7 +36,7 @@ namespace Reach.Controllers
 
         public ActionResult Videos(int page = 1)
         {
-            var pageContent = repo.GetAll().ToList().ToPagedList(page, 5);
+            var pageContent = service.GetAll().ToList().ToPagedList(page, 5);
             ViewBag.VideoList = pageContent;
 
             return View();
@@ -93,9 +87,7 @@ namespace Reach.Controllers
         {
             return RedirectToAction("Index", "Admin");
         }
-
-        [HttpPost]
-        [ActionName("Create")]
+     
         public ActionResult CreateYoukuVideo()
         {
             return View();

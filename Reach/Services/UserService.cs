@@ -7,7 +7,7 @@ using Reach.Models;
 
 namespace Reach.Services
 {
-    public class UserService : CrudService<User>, IUserservice
+    public class UserService : CrudService<User>, IUserService
     {
         public UserService()
             : base()

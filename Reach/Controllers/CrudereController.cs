@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace Reach.Controllers
 {
-    public abstract class CrudController<TEntity, TCreateInput, TEditInput> : BaseController
+    public abstract class CrudereController<TEntity, TCreateInput, TEditInput> : BaseController
         where TEntity : Entity, new()
         where TCreateInput : new()
         where TEditInput : Input, new()
@@ -18,7 +18,7 @@ namespace Reach.Controllers
         private readonly IMapper<TEntity, TEditInput> editMapper;
 
 
-        public CrudController(ICrudService<TEntity> service, IMapper<TEntity, TCreateInput> createMapper, IMapper<TEntity, TEditInput> editMapper)
+        public CrudereController(ICrudService<TEntity> service, IMapper<TEntity, TCreateInput> createMapper, IMapper<TEntity, TEditInput> editMapper)
         {
             this.service = service;
             this.createMapper = createMapper;

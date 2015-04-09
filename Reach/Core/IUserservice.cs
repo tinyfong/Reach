@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Reach.Core
 {
-    public interface IUserservice:ICrudService<User>
+    public interface IUserService:ICrudService<User>
     {
         bool IsUnique(string userName);
         void ChangePassword(int id, string password);
