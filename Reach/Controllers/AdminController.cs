@@ -19,8 +19,7 @@ namespace Reach.Controllers
     {
         private readonly IFormsAuthentication formsAuth;
         private readonly IUserService userService;
-
-
+        
 
         public AdminController(ICrudService<Video> service, IMapper<Video, YoukuVideoInput> v, IFormsAuthentication formsAuth, IUserService userService)
             : base(service, v)

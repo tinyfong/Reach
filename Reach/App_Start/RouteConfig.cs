@@ -13,11 +13,24 @@ namespace Reach
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
+            routes.MapRoute(
+           name: "Admin",
+           url: "Admin/{controller}/{action}",
+           defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+           namespaces: new[] { "Reach.Controllers.Admin" }
+       );
+
+
+
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                    namespaces: new[] { "Reach.Controllers" }
             );
+
         }
     }
 }
