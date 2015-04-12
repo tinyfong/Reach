@@ -238,7 +238,6 @@
     <Content Include="Views\Shared\_HomeLayout.cshtml" />
     <Content Include="Views\Admin\Videos.cshtml" />
     <Content Include="Views\Admin\CreateYoukuVideo.cshtml" />
-    <Content Include="Views\Videos\Index.cshtml" />
     <Content Include="Views\Admin\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
