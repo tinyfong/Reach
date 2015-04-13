@@ -24,12 +24,7 @@ namespace Reach.Controllers
             this.createMapper = createMapper;
             this.editMapper = editMapper;
         }
-
-        public virtual ActionResult Index()
-        {
-            return View();
-        }
-
+     
         [HttpGet]
         public ActionResult Create()
         {

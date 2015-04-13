@@ -28,7 +28,7 @@ namespace Reach.Controllers
             this.userService = userService;
         }
 
-        public override ActionResult Index()
+        public  ActionResult Index()
         {
             return RedirectToAction("Videos", "Admin");
         }

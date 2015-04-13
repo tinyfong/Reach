@@ -1,6 +1,6 @@
 ﻿@{
     ViewBag.Title = "Videos";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Areas/Management/Views/Shared/_AdminLayout.cshtml";
     IPagedList<Video> pagedList = ViewBag.VideoList;
 }
 <div class="row">
@@ -16,17 +16,15 @@
                 </span>
             </div>
         }
-
     </div>
+
     <div class="col-xs-6 text-right">
-        <a class="btn btn-primary" href="@Url.Action("CreateYoukuVideo")" role="button">
-        <span class="glyphicon glyphicon-plus-sign"></span>
-        <span>新增</span>
+        <a class="btn btn-primary" href="@Url.Action("Create")" role="button">
+            <span class="glyphicon glyphicon-plus-sign"></span>
+            <span>新增</span>
         </a>
     </div>
 </div>
-
-
 
 <div class="row">
     <div class="col-xs-12">
@@ -69,6 +67,6 @@
     </div>
 
     <div class="col-xs-12">
-        @Html.PagedListPager((IPagedList)ViewBag.VideoList, page => Url.Action("Videos", new { page = page, search = ViewBag.Search }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+        @Html.PagedListPager((IPagedList)ViewBag.VideoList, page => Url.Action("Index", new { page = page, search = ViewBag.Search }), PagedListRenderOptions.ClassicPlusFirstAndLast)
     </div>
 </div>
