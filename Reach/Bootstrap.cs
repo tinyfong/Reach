@@ -1,4 +1,5 @@
-﻿using Reach.Infrastructure;
+﻿
+using Reach.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace Reach
         {
             ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(IoC.Container));
             WindsorConfigurator.Configure();
-          
+
         }
     }
 }

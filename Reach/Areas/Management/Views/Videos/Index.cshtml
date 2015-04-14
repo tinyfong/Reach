@@ -3,6 +3,8 @@
     Layout = "~/Areas/Management/Views/Shared/_AdminLayout.cshtml";
     IPagedList<Video> pagedList = ViewBag.VideoList;
 }
+
+
 <div class="row">
     <div class="col-xs-6">
         @using (Html.BeginForm("Words", "Config", FormMethod.Get))
@@ -19,6 +21,8 @@
     </div>
 
     <div class="col-xs-6 text-right">
+    
+    
         <a class="btn btn-primary" href="@Url.Action("Create")" role="button">
             <span class="glyphicon glyphicon-plus-sign"></span>
             <span>新增</span>
