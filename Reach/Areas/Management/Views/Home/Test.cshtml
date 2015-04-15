@@ -1,0 +1,19 @@
+﻿@{
+
+}
+
+
+
+
+
+
+
+
+@(Html.Awe().InitPopupForm()
+            .Name("create")
+            .Group("country")
+            .Height(200)
+            .Url(Url.Action("Create")))
+
+<button type="button" onclick="awe.open('create')" class="awe-btn">Create</button>
+

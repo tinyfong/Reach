@@ -1,0 +1,663 @@
+﻿body, ul, fieldset, textarea, img, legend, button, i
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body
+{
+    background-color: #fafafa;
+    font-family: Verdana, Tahoma, Arial, "Helvetica Neue", Helvetica, Sans-Serif;
+    font-size: 13px;
+    color: #262626;
+}
+
+.ico-edit, .ico-del
+{
+    display: block;
+    overflow: hidden;
+    height: 18px;
+    width: 18px;
+    background-repeat: no-repeat;
+}
+
+.ico-edit
+{
+    background-position: 0 -1px;
+}
+
+.ico-del
+{
+    background-position: -17px -1px;
+}
+
+.efield
+{
+    padding: 5px 0;
+}
+
+.bar {
+    padding: 5px 0;
+}
+.elabel
+{
+    text-align: right;
+    width: 150px;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    vertical-align: top;
+    margin-top: 1px;
+    padding-right: 3px;
+}
+
+@media (max-width: 480px)
+{
+    .elabel
+    {
+        text-align: left;
+        display: block;
+    }
+}
+
+.elabel2
+{
+    text-align: right;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    vertical-align: top;
+    margin-top: 1px;
+    padding-right: 3px;
+}
+
+.einput
+{
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: top;
+}
+
+.esubmit
+{
+    margin-left: 155px;
+}
+
+a:link
+{
+    color: #00f;
+    text-decoration: none;
+}
+
+a:visited
+{
+    color: #00f;
+}
+
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: underline;
+}
+
+.logo {
+    background: url(o2.png);
+    width: 30px;
+    height: 33px;
+    display: block;
+}
+
+.menu
+{
+    display: inline-block;
+    line-height: 3em;
+}
+
+.menu li
+{
+    display: inline-block;
+    *display: inline;
+    font-size: 18px;
+    vertical-align: middle;
+    text-rendering: optimizeLegibility;
+    margin-right: 0.7em;
+}
+
+.menu a
+{
+    text-decoration: none;
+    color: rgb(15, 93, 15);
+}
+
+.menu a:hover
+{
+    color: red;
+}
+
+#Menu a
+{
+    text-decoration: none;
+    display: block;
+}
+
+#Menu .awe-row
+{
+    line-height: 1.5em;
+}
+
+/* HEADINGS   
+----------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6
+{
+    font-family: "Segoe UI","Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+    font-size: 1.5em;
+    color: #444;
+}
+
+h1
+{
+    font-size: 2em;
+    padding-bottom: 0;
+    margin-top: 12px;
+    margin-bottom: 5px;
+}
+
+h4
+{
+    font-size: 15px;
+}
+
+h5, h6
+{
+    font-size: 1em;
+}
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+/* you can specify a greater or lesser percentage for the 
+page width. Or, you can specify an exact pixel width. */
+.page
+{
+    width: 93%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#share td
+{
+    vertical-align: middle;
+}
+
+#header
+{
+    color: white;
+}
+
+#footer
+{
+    padding: 10px;
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.flst 
+{
+    list-style: none;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 25px;
+}
+
+.flst li 
+{
+    padding: 2px 0;
+}
+
+.flst li a 
+{
+    vertical-align: baseline;
+}
+
+#title
+{
+    margin-left: 47px;
+}
+
+#main
+{
+    padding: 10px;
+    background-color: #f5f5f5;
+    margin-bottom: 20px;
+    border-radius: 2px;
+    border: 1px solid gainsboro;
+}
+
+/* FORM LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+.section
+{
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    vertical-align: top;
+    background-color: #fafafa;
+}
+
+    .section select
+    {
+        width: 80px;
+    }
+
+fieldset
+{
+    border: 1px solid #ddd;
+    padding: 3px 5px;
+    margin: 3px 0 3px 3px;
+    border-radius: 2px;
+}
+
+legend
+{
+    font-size: 13px;
+    color: #555;
+    font-weight: bold;
+    width: auto;
+}
+
+textarea
+{
+    min-height: 75px;
+    border: 1px solid #ccc;
+}
+
+input[type="text"]
+{
+    border: 1px solid #CCC;
+    height: 22px;
+    margin: 2px 0;
+    padding: 0 3px;
+    border-radius: 2px;
+}
+
+.section label select, .section label input
+{
+    margin: 0;
+    vertical-align: middle;
+}
+
+.section label
+{
+    padding: 3px;
+    border-radius: 2px;
+    border: 1px solid gainsboro;
+    margin: 2px 0px;
+    display: inline-block;
+    zoom: 1;
+    *display: inline-block;
+    height: 30px;
+    background-color: whitesmoke;
+}
+
+.section input[type=submit]
+{
+    padding: 2px 13px;
+}
+
+input.mini
+{
+    width: 35px;
+    height: 18px;
+    padding: 2px;
+    line-height: 12px;
+    font-weight: normal;
+}
+/* MISC  
+----------------------------------------------------------*/
+.clear
+{
+    clear: both;
+}
+
+.error
+{
+    color: Red;
+}
+
+#menucontainer
+{
+    margin-top: 20px;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+@media (max-width: 767px)
+{
+    .field-validation-error
+    {
+        display: block;
+    }
+}
+
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    background-color: #ffeeee;
+}
+/* Styles for editor and display helpers
+----------------------------------------------------------*/
+.display-label, .editor-label
+{
+    margin: 1em 0 0 0;
+}
+
+.display-field, .editor-field
+{
+    margin: 0.5em 0 0 0;
+}
+
+.text-box
+{
+    width: 30em;
+}
+
+.text-box.multi-line
+{
+    height: 6.5em;
+}
+
+.tri-state
+{
+    width: 6em;
+}
+
+.stx
+{
+    width: 30px !important;
+}
+
+.prettyprint
+{
+    overflow: auto !important;
+    border: none;
+    background: transparent;
+    word-wrap: normal;
+}
+
+pre
+{
+    padding: 5px;
+    border-radius: 2px;
+    overflow: auto;
+}
+
+.codeWrap {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid gainsboro;
+    margin-bottom: 20px;
+}
+
+.codePath {
+    right: 0;
+    
+    border: 1px solid gainsboro;
+    color: gray;
+    padding: 2px 5px;
+    background: white;
+    border-right: none;
+    border-top: none;
+}
+
+@media(min-width: 780px) {
+    .codePath {
+        position: absolute;
+        border-radius: 0 0 0 3px;
+    }
+}
+
+.note
+{
+    word-break: break-all;
+    word-wrap: break-word;
+    padding: 0 10px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -moz-box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #222;
+    border-color: #F0C36D;
+    background-color: #F9EDBE;
+    white-space: pre;
+}
+
+.ib
+{
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    vertical-align: top;
+}
+
+.pnl
+{
+    min-width: 200px;
+    padding: 10px;
+}
+
+.fl
+{
+    float: left;
+}
+
+.hidden
+{
+    display: none;
+}
+
+.setting 
+{
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.setting select 
+{
+    width: auto;
+}
+
+#Menu .awe-row
+{
+    background-color: white;
+    border: none;
+}
+
+#Menu .awe-ghead
+{
+    border: none;
+}
+
+#Menu .awe-ghead td
+{
+    border-right: none;
+}
+
+#Menu .awe-row td
+{
+    padding: 0.3em 0.2em;
+    border-right: none;
+}
+
+#Menu .awe-row.selected
+{
+    background-color: #f7fbfd;
+}
+
+#Menu .awe-idn
+{
+    width: 7px;
+}
+
+#Menu tr.selected:not(.awe-ghead) .awe-idn:first-child
+{
+    background-color: rgb(0, 128, 148);
+    background-color: #5c87b2;
+}
+
+#Menu tr.selected:not(.awe-ghead) td:not(.awe-idn)
+{
+    padding-left: 5px;
+}
+
+#demoMenu
+{
+    width: 13.5em;
+    float: left;
+}
+
+#demoPage
+{
+    margin-left: 14em;
+}
+
+#demoMenu td
+{
+    border-bottom: none;
+}
+
+a.awe-btn
+{
+    text-decoration: none;
+}
+
+.shcode
+{
+    cursor: pointer;
+    color: rgb(0, 6, 101);
+    border: none;
+    text-decoration: underline;
+    line-height: 2em;
+}
+
+.errPopup
+{
+    font-size: 11px;
+}
+
+.errPopup .ui-dialog-titlebar
+{
+    padding: 0.2em 1em;
+}
+
+.expl li
+{
+    padding: 3px 0;
+    list-style: none;
+}
+
+.expl p
+{
+    padding: 0;
+    margin: 0;
+}
+
+code
+{
+    font-family: Consolas, Verdana, Tahoma;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.awe-ajaxdropdown-field, .awe-ajaxcheckboxlist-field, .awe-ajaxradiolist-field
+{
+    vertical-align: top;
+}
+
+.log
+{
+    height: 70px;
+    overflow-y: scroll;
+    background: white;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.wwrap
+{
+    word-break: break-all;
+}
+
+
+/* inline popup */
+.inl-btn
+{
+    width: 70px;
+    padding: 5px;
+    margin-right: 3px;
+}
+
+.inl-txt
+{
+    vertical-align: middle;
+    margin: 0 1em;
+}
+
+.wrap
+{
+    margin: .5em;
+    padding: 5px;
+}
+
+    .wrap .awe-popup
+    {
+        padding: .90em 0;
+    }
+
+.wa
+{
+    width: auto;
+}
+
+a.anchor
+{
+    color: white;
+    margin-left: 5px;
+    color: green;
+    outline: none;
+}
+
+a.anchor i {
+    display: none;
+}
+
+h2:hover .anchor i, h3:hover .anchor i {
+    display: inline-block;
+    font-size: 90%;
+}
+
+h2:hover .anchor, h3:hover .anchor
+{
+    display: inline;
+    display: inline;
+}
+
+@-ms-viewport
+{
+    width: auto !important;
+}

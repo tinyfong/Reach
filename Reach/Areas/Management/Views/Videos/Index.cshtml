@@ -4,7 +4,6 @@
     IPagedList<Video> pagedList = ViewBag.VideoList;
 }
 
-
 <div class="row">
     <div class="col-xs-6">
         @using (Html.BeginForm("Words", "Config", FormMethod.Get))
@@ -23,6 +22,7 @@
     <div class="col-xs-6 text-right">
 
 
+        <button type="button" onclick="awe.open('create')" class="btn btn-primary">Create</button>
 
         <a class="btn btn-primary" href="@Url.Action("Create")" role="button">
             <span class="glyphicon glyphicon-plus-sign"></span>
@@ -75,3 +75,4 @@
         @Html.PagedListPager((IPagedList)ViewBag.VideoList, page => Url.Action("Index", new { page = page, search = ViewBag.Search }), PagedListRenderOptions.ClassicPlusFirstAndLast)
     </div>
 </div>
+

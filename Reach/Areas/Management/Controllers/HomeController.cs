@@ -21,7 +21,12 @@ namespace Reach.Areas.Management.Controllers
 
         }
 
-        public  ActionResult Index()
+        public ActionResult Test()
+        {
+            return View();
+        }
+
+        public ActionResult Index()
         {
             return RedirectToAction("Index", "Videos");
         }
