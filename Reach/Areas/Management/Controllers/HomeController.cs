@@ -11,7 +11,7 @@ using PagedList;
 
 namespace Reach.Areas.Management.Controllers
 {
-    [ManagementAuthorizeAttribute]
+
     public class HomeController : CruderController<Video, YoukuVideoInput>
     {
 
@@ -49,9 +49,22 @@ namespace Reach.Areas.Management.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+
         public ActionResult CreateYoukuVideo()
         {
             return View();
+        }
+
+
+        public ActionResult ViewLyubomir()
+        {
+            return PartialView("_Lyubomir");
+        }
+
+        [HttpPost]
+        public ActionResult Lyubomir()
+        {
+            return RedirectToAction("Index");
         }
     }
 }
