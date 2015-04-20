@@ -22,12 +22,12 @@
     <div class="col-xs-6 text-right">
 
 
-        <button type="button" onclick="awe.open('create')" class="btn btn-primary">Create</button>
-
-        <a class="btn btn-primary" href="@Url.Action("Create")" role="button">
+        <a id="createModel" class="modal-link btn btn-primary" href="@Url.Action("Create","Videos")" role="button" data-backdrop="static" >
             <span class="glyphicon glyphicon-plus-sign"></span>
             <span>新增</span>
         </a>
+
+
     </div>
 </div>
 
@@ -76,3 +76,39 @@
     </div>
 </div>
 
+
+
+
+<style>
+    .modal-content {
+        width: 640px !important;
+        margin: 30px auto !important;
+    }
+</style>
+<div id="modal-container" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-content">
+        <div class="modal-body"></div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(function () {
+            $("#createModel").click(function (e) {
+                e.preventDefault();
+                $(this).attr('data-target', '#modal-container');
+                $(this).attr('data-toggle', 'modal');
+
+            });
+
+
+            $('#modal-container').on('hidden.bs.modal', function () {
+                $(this).removeData('bs.modal');
+            });
+            $('#CancelModal').on('click', function () {
+                return false;
+            });
+        });
+
+    </script>
+}

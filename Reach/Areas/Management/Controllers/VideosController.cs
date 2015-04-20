@@ -11,7 +11,6 @@ using PagedList;
 
 namespace Reach.Areas.Management.Controllers
 {
-    [ManagementAuthorize]
     public class VideosController : CruderController<Video, YoukuVideoInput>
     {
         public VideosController(ICrudService<Video> service, IMapper<Video, YoukuVideoInput> v)
@@ -28,6 +27,7 @@ namespace Reach.Areas.Management.Controllers
 
             return View();
         }
+
 
         //public ActionResult Index(int page = 1)
         //{

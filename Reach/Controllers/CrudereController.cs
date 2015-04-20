@@ -24,11 +24,11 @@ namespace Reach.Controllers
             this.createMapper = createMapper;
             this.editMapper = editMapper;
         }
-     
+
         [HttpGet]
         public ActionResult Create()
         {
-            return View(createMapper.MapToInput(new TEntity()));
+            return View();
         }
 
         [HttpPost]
