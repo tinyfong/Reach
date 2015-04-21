@@ -6,6 +6,7 @@ using Reach.Models;
 using Reach.DAL;
 using System.Linq.Expressions;
 using Reach.Core;
+using Omu.ValueInjecter;
 
 namespace Reach.Repository
 {
@@ -26,18 +27,18 @@ namespace Reach.Repository
 
         public virtual IQueryable<T> GetAll()
         {
-            return db.Set<T>();
+            return db.Set<T>().OrderByDescending(x => x.Id);
         }
 
         public IQueryable<T> Where(Expression<Func<T, bool>> predicate)
         {
-            return db.Set<T>().Where(predicate);
+            return GetAll().Where(predicate);
         }
 
         public T Insert(T o)
         {
             var t = db.Set<T>().Create();
-            t.Id = o.Id;
+            t.InjectFrom(o);
             db.Set<T>().Add(t);
             return t;
         }

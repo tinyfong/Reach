@@ -17,6 +17,8 @@ namespace Reach.Controllers
         private readonly IMapper<TEntity, TCreateInput> createMapper;
         private readonly IMapper<TEntity, TEditInput> editMapper;
 
+        protected virtual string EditView { get { return "Create"; } }
+
 
         public CrudereController(ICrudService<TEntity> service, IMapper<TEntity, TCreateInput> createMapper, IMapper<TEntity, TEditInput> editMapper)
         {
@@ -39,12 +41,42 @@ namespace Reach.Controllers
                 return View(input);
             }
 
-            var id = service.Create(createMapper.MapToEntity(input, new TEntity()));
+            var entity = createMapper.MapToEntity(input, new TEntity());
+            var id = service.Create(entity);
+            entity = service.Get(id);
+
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
             var entity = service.Get(id);
+            return View("Create", editMapper.MapToInput(entity));
+        }
 
+        [HttpPost]
+        public ActionResult Edit(TEditInput input)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return View(EditView, input);
+                }
 
+                var old = service.Get(input.Id);
+                var entity = editMapper.MapToEntity(input, old);
+                service.Save();
 
-            return Json(entity);
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return Content(ex.Message);
+                throw;
+            }
         }
     }
 }
