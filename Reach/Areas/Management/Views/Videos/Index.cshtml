@@ -56,7 +56,7 @@
                         <td class="col-xs-1">@item.UpdateTime.GetValueOrDefault().ToString("yyyy/MM/dd")</td>
                         <td class="col-xs-1">@item.Rank</td>
                         <td class="col-xs-1">
-                            <a name="editView" href="@Url.Action("Edit", new { id = item.Id, returnUrl = @Url.Encode(Request.RawUrl) })"><span class="glyphicon glyphicon-edit"></span></a>
+                            <a name="editView" href="@Url.Action("Edit", new { id = item.Id, returnUrl = @Url.Encode(Request.RawUrl) })" role="button"><span class="glyphicon glyphicon-edit"></span></a>
                         </td>
                         <td class="col-xs-1">
                             @using (Html.BeginForm("DeleteWord", "Config", new { id = item.Id, returnUrl = Request.Url.PathAndQuery }, FormMethod.Post, new { @onsubmit = "return confirm('确定删除？')" }))
@@ -95,6 +95,7 @@
 
 @section scripts{
     <script>
+      
         $(function () {
             $("a[name=editView]").click(function (e) {
                 e.preventDefault();
@@ -102,8 +103,10 @@
                 $(this).attr('data-toggle', 'modal');
 
             });
-            
 
+            $('body').on('click', '.modal-close-btn', function () {
+                $('#modal-container').modal('hide');
+            });
             $('#modal-container').on('hidden.bs.modal', function () {
                 $(this).removeData('bs.modal');
             });

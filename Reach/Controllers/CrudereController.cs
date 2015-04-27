@@ -49,6 +49,7 @@ namespace Reach.Controllers
             return RedirectToAction("Index");
         }
 
+        [OutputCache(Duration = 0)]
         [HttpGet]
         public ActionResult Edit(int id)
         {
