@@ -1,0 +1,40 @@
+﻿@model DeleteInput
+@{
+    var returnUrl = ViewBag.ReturnUrl as string;
+}
+
+
+<div class="container" style="width:600px">
+    <div class="row">
+        <div class="col-xs-12">
+
+            @using (Html.BeginForm())
+            {
+                @Html.Hidden("returnUrl", returnUrl)
+
+                <div class="modal-body">
+                    <h4> 确认删除？</h4>
+                </div>
+
+                <div class="modal-footer">
+                    <div class="form-group text-center">
+                        <button type="button" class="btn btn-default"
+                                data-dismiss="modal">
+                            取消
+                        </button>
+
+                        <button type="submit" id="approve-btn"
+                                class="btn btn-danger">
+                            删除
+                        </button>
+                    </div>
+
+                </div>
+
+
+
+            }
+        </div>
+    </div>
+
+</div>

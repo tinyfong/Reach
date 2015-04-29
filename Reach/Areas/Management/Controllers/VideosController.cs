@@ -11,7 +11,7 @@ using PagedList;
 
 namespace Reach.Areas.Management.Controllers
 {
-  
+
     public class VideosController : CruderController<Video, YoukuVideoInput>
     {
         public VideosController(ICrudService<Video> service, IMapper<Video, YoukuVideoInput> v)
@@ -22,20 +22,18 @@ namespace Reach.Areas.Management.Controllers
 
         public ActionResult Index(int page = 1)
         {
-
             var pageContent = service.GetAll().ToList().ToPagedList(page, 5);
-            ViewBag.VideoList = pageContent;
-
-            return View();
+            
+            return View(pageContent);
+        }
+        protected override string EditView
+        {
+            get
+            {
+                return "YoukuEdit";
+            }
         }
 
 
-        //public ActionResult Index(int page = 1)
-        //{
-        //    var pageContent = service.GetAll().ToList().ToPagedList(page, 5);
-        //    ViewBag.VideoList = pageContent;
-
-        //    return View();
-        //}
     }
 }

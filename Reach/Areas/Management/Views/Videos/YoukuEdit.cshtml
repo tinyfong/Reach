@@ -1,0 +1,79 @@
+﻿@model YoukuVideoInput
+@{
+    ViewBag.Title = "创建视频";
+    var returnUrl = ViewBag.ReturnUrl as string;  
+}
+
+
+<div class="modal-body">
+
+
+    <div class="container" style="width:600px">
+        <div class="row">
+            <div class="col-xs-12">
+
+                @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "", @role = "form", @autocomplete = "off" }))
+                {
+                    @Html.Hidden("returnUrl", returnUrl)
+
+                    <div class="form-group">
+
+                        @Html.LabelFor(x => x.Name)
+                        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Customer)
+                        @Html.TextBoxFor(x => x.Customer, new { @class = "form-control" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.YoukuId)
+                        @Html.TextBoxFor(x => x.YoukuId, new { @class = "form-control" })
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Rank
+)
+                        @Html.TextBoxFor(x => x.Rank, new { @class = "form-control" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Description
+)
+                        @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @rows = 3 })
+                    </div>
+
+                    <div class="form-group text-center">
+                        <button type="button" class="btn btn-default"
+                                data-dismiss="modal">
+                            取消
+                        </button>
+                        <button type="submit" id="approve-btn"
+                                class="btn btn-primary">
+                            保存
+                        </button>
+                    </div>
+
+
+                }
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(function () {
+        $('#approve-btn').click(function () {
+            $('#modal-container').modal('hide');
+        });
+    });
+</script>
+
+
+
+

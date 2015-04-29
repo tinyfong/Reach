@@ -1,7 +1,8 @@
-﻿@{
+﻿@model IPagedList<Video>
+
+@{
     ViewBag.Title = "Videos";
     Layout = "~/Areas/Management/Views/Shared/_AdminLayout.cshtml";
-    IPagedList<Video> pagedList = ViewBag.VideoList;
 }
 
 <div class="row">
@@ -20,9 +21,7 @@
     </div>
 
     <div class="col-xs-6 text-right">
-
-
-        <a name="editView" class="modal-link btn btn-primary" href="@Url.Action("Create","Videos")" role="button" data-backdrop="static">
+        <a name="invokeModal" class="modal-link btn btn-primary" href="@Url.Action("Create","Videos")" role="button" data-backdrop="static">
             <span class="glyphicon glyphicon-plus-sign"></span>
             <span>新增</span>
         </a>
@@ -38,31 +37,28 @@
             </caption>
             <thead>
                 <tr>
-                    <th>名称</th>
-                    <th>客户</th>
-                    <th>日期</th>
-                    <th>等级</th>
+                    <th>@Html.DisplayNameFor(m => m.First().Name)</th>
+                    <th>@Html.DisplayNameFor(m => m.First().Customer)</th>
+                    <th>@Html.DisplayNameFor(m => m.First().CreateDate)</th>
+                    <th>@Html.DisplayNameFor(m => m.First().Rank)</th>
                     <th>编辑</th>
                     <th>删除</th>
                 </tr>
             </thead>
             <tbody>
 
-                @foreach (Video item in pagedList)
+                @foreach (Video item in Model)
                 {
                     <tr>
-                        <td class="col-xs-3">@item.Name</td>
-                        <td class="col-xs-5">@item.Customer</td>
-                        <td class="col-xs-1">@item.UpdateTime.GetValueOrDefault().ToString("yyyy/MM/dd")</td>
+                        <td class="col-xs-5">@item.Name</td>
+                        <td class="col-xs-3">@item.Customer</td>
+                        <td class="col-xs-1">@item.CreateDate.GetValueOrDefault().ToString("yyyy/MM/dd")</td>
                         <td class="col-xs-1">@item.Rank</td>
                         <td class="col-xs-1">
-                            <a name="editView" href="@Url.Action("Edit", new { id = item.Id, returnUrl = @Url.Encode(Request.RawUrl) })" role="button"><span class="glyphicon glyphicon-edit"></span></a>
+                            <a name="invokeModal" href="@Url.Action("Edit", new { id = item.Id, returnUrl = @Url.Encode(Request.RawUrl) })" role="button"><span class="glyphicon glyphicon-edit"></span></a>
                         </td>
                         <td class="col-xs-1">
-                            @using (Html.BeginForm("DeleteWord", "Config", new { id = item.Id, returnUrl = Request.Url.PathAndQuery }, FormMethod.Post, new { @onsubmit = "return confirm('确定删除？')" }))
-                            {
-                                <button type="submit" class="btn btn-link btn-xs"><span class="glyphicon glyphicon-remove"></span></button>
-                            }
+                            <a name="invokeModal" href="@Url.Action("Delete", new { id = item.Id, returnUrl = @Url.Encode(Request.RawUrl) })" role="button"><span class="glyphicon glyphicon-remove"></span></a>
                         </td>
 
                     </tr>
@@ -72,7 +68,7 @@
     </div>
 
     <div class="col-xs-12">
-        @Html.PagedListPager((IPagedList)ViewBag.VideoList, page => Url.Action("Index", new { page = page, search = ViewBag.Search }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page, search = ViewBag.Search }), PagedListRenderOptions.ClassicPlusFirstAndLast)
     </div>
 </div>
 
@@ -87,17 +83,15 @@
 </style>
 <div id="modal-container" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-content">
-        <div class="modal-body">
 
-        </div>
     </div>
 </div>
 
 @section scripts{
     <script>
-      
+
         $(function () {
-            $("a[name=editView]").click(function (e) {
+            $("a[name=invokeModal]").click(function (e) {
                 e.preventDefault();
                 $(this).attr('data-target', '#modal-container');
                 $(this).attr('data-toggle', 'modal');

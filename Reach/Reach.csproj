@@ -200,7 +200,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Areas\Portal\Views\Web.config" />
     <Content Include="Areas\Management\Views\Web.config" />
-    <Content Include="Areas\Management\Views\Videos\Create.cshtml" />
+    <Content Include="Areas\Management\Views\Videos\YoukuEdit.cshtml" />
     <Content Include="Areas\Management\Views\Account\Login.cshtml" />
     <Content Include="Areas\Management\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Management\Views\Shared\_AdminLayout.cshtml" />
@@ -247,6 +247,7 @@
     <Content Include="Views\ShowCase\Index.cshtml" />
     <Content Include="Views\Shared\_HomeLayout.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Areas\Management\Views\Shared\ConfirmDelete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

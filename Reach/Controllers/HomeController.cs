@@ -27,12 +27,12 @@ namespace Reach.Controllers
             topVideo = repo.Get(videoId);
             if (topVideo == null)
             {
-                topVideo = repo.GetAll().Where(x => x.Rank == 1).OrderByDescending(x => x.UpdateTime).FirstOrDefault();
+                topVideo = repo.GetAll().Where(x => x.Rank == 1).OrderByDescending(x => x.CreateDate).FirstOrDefault();
             }
             ViewBag.TopVideo = topVideo;
 
             // Vedio List
-            var videoList = repo.GetAll().Where(x => x.Id != topVideo.Id).Take(4).OrderBy(x => x.Rank).ThenByDescending(x => x.UpdateTime).ToList();
+            var videoList = repo.GetAll().Where(x => x.Id != topVideo.Id).Take(4).OrderBy(x => x.Rank).ThenByDescending(x => x.CreateDate).ToList();
 
             // Load Thumbnail
             YoukuThumbnailHandler handler = new YoukuThumbnailHandler();

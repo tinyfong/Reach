@@ -16,6 +16,7 @@ namespace Reach
         {
             WindsorRegistrar.Register<IUserService, UserService>();
             WindsorRegistrar.Register<IFormsAuthentication, FormAuthService>();
+            WindsorRegistrar.Register<ICrudService<Video>, VideoService>();
 
             WindsorRegistrar.registerAllFromAssemblies("Reach");
 

@@ -21,7 +21,7 @@ namespace Reach.DAL
                 Url = "http://player.youku.com/embed/XODg3ODYwODgw",
                 Rank = 1,
                 Customer = "Youku",
-                UpdateTime = new DateTime(2015, 1, 1)
+                CreateDate = new DateTime(2015, 1, 1)
             };
 
             var v2 = new Video
@@ -33,7 +33,7 @@ namespace Reach.DAL
                 Url = "http://player.youku.com/embed/XOTEzMDA2NTA4",
                 Rank = 2,
                 Customer = "Youku",
-                UpdateTime = new DateTime(2015, 1, 2)
+                CreateDate = new DateTime(2015, 1, 2)
             };
 
             var v3 = new Video
@@ -45,7 +45,7 @@ namespace Reach.DAL
                 Url = "http://player.youku.com/embed/XMzMwNTkyNDI4",
                 Rank = 2,
                 Customer = "Youku",
-                UpdateTime = new DateTime(2015, 2, 1)
+                CreateDate = new DateTime(2015, 2, 1)
             };
 
             var v4 = new Video
@@ -57,7 +57,7 @@ namespace Reach.DAL
                 Url = "http://player.youku.com/embed/XMjcwNjYwNTIw",
                 Rank = 2,
                 Customer = "Youku",
-                UpdateTime = new DateTime(2015, 3, 1)
+                CreateDate = new DateTime(2015, 3, 1)
             };
 
             var v5 = new Video
@@ -69,7 +69,7 @@ namespace Reach.DAL
                 Url = "http://player.youku.com/embed/XMjQyMDM2NzY0",
                 Rank = 2,
                 Customer = "Youku",
-                UpdateTime = new DateTime(2015, 3, 1)
+                CreateDate = new DateTime(2015, 3, 1)
             };
 
             var v6 = new Video
@@ -81,7 +81,7 @@ namespace Reach.DAL
                 Url = "http://player.youku.com/embed/XODEzODI3NDky",
                 Rank = 2,
                 Customer = "Youku",
-                UpdateTime = new DateTime(2015, 4, 1)
+                CreateDate = new DateTime(2015, 4, 1)
             };
 
             var videos = new List<Video>() {

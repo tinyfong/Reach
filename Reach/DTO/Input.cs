@@ -42,4 +42,9 @@ namespace Reach.DTO
         public Nullable<int> Rank { get; set; }
 
     }
+
+    public class DeleteInput : Input
+    {
+
+    }
 }
