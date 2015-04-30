@@ -8,6 +8,7 @@ namespace Reach.AccessVideoSupplier.Test
     {
         //string url = "http://v.youku.com/player/getPlayList/VideoIDS/XODg3ODYwODgw";
         string youkuId = "XODg3ODYwODgw";
+        //string youkuId = "x";
 
         [TestMethod]
         public void TestGetBigThumbnailUrl()

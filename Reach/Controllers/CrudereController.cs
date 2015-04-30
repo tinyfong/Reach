@@ -60,8 +60,9 @@ namespace Reach.Controllers
             {
                 ViewBag.ReturnUrl = returnUrl;
             }
-            var entity = service.Get(id);
-            return View(editMapper.MapToInput(entity));
+            var entity = service.Get(id); 
+            var model = editMapper.MapToInput(entity);
+            return View(EditView, model);
         }
 
         [HttpPost]

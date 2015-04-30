@@ -21,9 +21,10 @@ namespace Reach.Areas.Management.Controllers
         }
 
         public ActionResult Index(int page = 1)
-        {
+        {        
+
             var pageContent = service.GetAll().ToList().ToPagedList(page, 5);
-            
+
             return View(pageContent);
         }
         protected override string EditView

@@ -5,6 +5,7 @@ using System.Net;
 using System.Text;
 using Reach.AccessVideoSupplier.Model;
 using Newtonsoft.Json;
+using System.Web.Configuration;
 
 namespace Reach.AccessVideoSupplier
 {
@@ -39,18 +40,33 @@ namespace Reach.AccessVideoSupplier
                 client.Encoding = Encoding.UTF8;
                 string back = client.DownloadString(url);
                 YoukuVideo v = JsonConvert.DeserializeObject<YoukuVideo>(back);
-                return v.Data.First()["logo"].ToString();
+                if (v.Data.FirstOrDefault() == null)
+                {
+                    return null;
+                }
+
+                return v.Data.FirstOrDefault()["logo"].ToString();
             }
         }
 
         public byte[] GetImgaeByUrl(string url)
         {
+            if (string.IsNullOrWhiteSpace(url))
+            {
+                return null;
+            }
+
             using (WebClient client = new WebClient())
             {
                 byte[] buffer = client.DownloadData(url);
 
                 return buffer;
             }
+        }
+
+        public string GetVideoUrlByYoukuId(string youkuId)
+        {
+            return WebConfigurationManager.AppSettings["YoukuVideoEmbedPrefix"] + youkuId;
         }
 
     }

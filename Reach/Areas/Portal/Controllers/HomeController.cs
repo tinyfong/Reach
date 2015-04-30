@@ -1,17 +1,14 @@
-﻿using System;
+﻿using Reach.Core;
+using Reach.DAL;
+using Reach.Models;
+using Reach.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Reach.DAL;
-using Reach.Models;
-using Reach.AccessVideoSupplier;
-using System.Data.Entity;
-using Reach.Repository;
-using Reach.Core;
-using Reach.Services;
 
-namespace Reach.Controllers
+namespace Reach.Areas.Portal.Controllers
 {
     public class HomeController : Controller
     {

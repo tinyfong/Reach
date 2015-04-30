@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Reach.Controllers
+namespace Reach.Areas.Portal.Controllers
 {
     public class ShowcaseController : BaseVideoController
     {

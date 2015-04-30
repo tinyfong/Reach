@@ -50,18 +50,20 @@
                 @foreach (Video item in Model)
                 {
                     <tr>
-                        <td class="col-xs-5">@item.Name</td>
-                        <td class="col-xs-3">@item.Customer</td>
-                        <td class="col-xs-1">@item.CreateDate.GetValueOrDefault().ToString("yyyy/MM/dd")</td>
-                        <td class="col-xs-1">@item.Rank</td>
+                        <td class="col-xs-5">@Html.DisplayFor(x => item.Name)</td>
+                        <td class="col-xs-3">@Html.DisplayFor(x => item.Customer)</td>
                         <td class="col-xs-1">
-                            <a name="invokeModal" href="@Url.Action("Edit", new { id = item.Id, returnUrl = @Url.Encode(Request.RawUrl) })" role="button"><span class="glyphicon glyphicon-edit"></span></a>
-                        </td>
-                        <td class="col-xs-1">
-                            <a name="invokeModal" href="@Url.Action("Delete", new { id = item.Id, returnUrl = @Url.Encode(Request.RawUrl) })" role="button"><span class="glyphicon glyphicon-remove"></span></a>
-                        </td>
+                            @Html.DisplayFor(x => item.CreateDate)
+                    </td>
+                    <td class="col-xs-1">@Html.DisplayFor(x => item.Rank)</td>
+                    <td class="col-xs-1">
+                        <a name="invokeModal" href="@Url.Action("Edit", new { id = item.Id, returnUrl = @Url.Encode(Request.RawUrl) })" role="button"><span class="glyphicon glyphicon-edit"></span></a>
+                    </td>
+                    <td class="col-xs-1">
+                        <a name="invokeModal" href="@Url.Action("Delete", new { id = item.Id, returnUrl = @Url.Encode(Request.RawUrl) })" role="button"><span class="glyphicon glyphicon-remove"></span></a>
+                    </td>
 
-                    </tr>
+                </tr>
                 }
             </tbody>
         </table>

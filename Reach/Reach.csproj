@@ -150,20 +150,21 @@
     <Compile Include="Areas\Management\Controllers\HomeController.cs" />
     <Compile Include="Areas\Management\Controllers\VideosController.cs" />
     <Compile Include="Areas\Management\ManagementAreaRegistration.cs" />
+    <Compile Include="Areas\Portal\Controllers\HomeController.cs" />
     <Compile Include="Areas\Portal\PortalAreaRegistration.cs" />
     <Compile Include="Bootstrap.cs" />
     <Compile Include="ManagementAuthorizeAttribute.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Controllers\BaseVideoController.cs" />
+    <Compile Include="Areas\Portal\Controllers\BaseVideoController.cs" />
     <Compile Include="Controllers\CruderController.cs" />
     <Compile Include="Controllers\CrudereController.cs" />
-    <Compile Include="Controllers\ShowcaseController.cs" />
+    <Compile Include="Areas\Portal\Controllers\ShowcaseController.cs" />
     <Compile Include="Controllers\VideoController.cs" />
     <Compile Include="Core\ICrudService.cs" />
     <Compile Include="Core\IMapper.cs" />
     <Compile Include="Core\IUserService.cs" />
     <Compile Include="Core\IFormsAuthentication.cs" />
+    <Compile Include="Mappers\VideoMapper.cs" />
     <Compile Include="WindsorControllerFactory.cs" />
     <Compile Include="DAL\ReachContext.cs" />
     <Compile Include="DAL\ReachInitializer.cs" />
@@ -214,6 +215,8 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Areas\Management\Views\Home\_Lyubomir.cshtml" />
+    <Content Include="Areas\Portal\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Portal\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Icon.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -245,16 +248,14 @@
     <Content Include="Views\Video\Edit.cshtml" />
     <Content Include="Views\Video\Delete.cshtml" />
     <Content Include="Views\ShowCase\Index.cshtml" />
-    <Content Include="Views\Shared\_HomeLayout.cshtml" />
+    <Content Include="Areas\Portal\Views\Shared\_HomeLayout.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Areas\Management\Views\Shared\ConfirmDelete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Management\Models\" />
-    <Folder Include="Areas\Portal\Controllers\" />
     <Folder Include="Areas\Portal\Models\" />
-    <Folder Include="Areas\Portal\Views\Shared\" />
     <Folder Include="Content\themes\" />
     <Folder Include="Libs\" />
   </ItemGroup>

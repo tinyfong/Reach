@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using Reach.Models;
 
-namespace Reach.Controllers
+namespace Reach.Areas.Portal.Controllers
 {
     public class BaseVideoController : Controller
     {

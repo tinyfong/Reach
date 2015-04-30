@@ -11,14 +11,14 @@ namespace Reach.Mappers
         where TEntity : class,new()
         where TInput : new()
     {
-        public TInput MapToInput(TEntity entity)
+        public virtual TInput MapToInput(TEntity entity)
         {
             var input = new TInput();
             input.InjectFrom(entity);
             return input;
         }
 
-        public TEntity MapToEntity(TInput input, TEntity entity)
+        public virtual TEntity MapToEntity(TInput input, TEntity entity)
         {
             entity.InjectFrom(input);
             return entity;
