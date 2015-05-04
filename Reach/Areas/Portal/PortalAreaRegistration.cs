@@ -17,7 +17,7 @@ namespace Reach.Areas.Portal
             context.MapRoute(
                 "Portal_default",
                 "Portal/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

@@ -153,8 +153,8 @@
     <Compile Include="Areas\Portal\Controllers\HomeController.cs" />
     <Compile Include="Areas\Portal\PortalAreaRegistration.cs" />
     <Compile Include="Bootstrap.cs" />
-    <Compile Include="ManagementAuthorizeAttribute.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="ManagementAuthorizeAttribute.cs" />
     <Compile Include="Areas\Portal\Controllers\BaseVideoController.cs" />
     <Compile Include="Controllers\CruderController.cs" />
     <Compile Include="Controllers\CrudereController.cs" />
@@ -180,7 +180,6 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Video.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Core\IRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
     <Compile Include="Services\VideoService.cs" />
@@ -217,6 +216,7 @@
     <Content Include="Areas\Management\Views\Home\_Lyubomir.cshtml" />
     <Content Include="Areas\Portal\Views\Home\Index.cshtml" />
     <Content Include="Areas\Portal\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Portal\Views\ShowCase\Index.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Icon.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -241,13 +241,11 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Video\Index.cshtml" />
     <Content Include="Views\Video\Details.cshtml" />
     <Content Include="Views\Video\Create.cshtml" />
     <Content Include="Views\Video\Edit.cshtml" />
     <Content Include="Views\Video\Delete.cshtml" />
-    <Content Include="Views\ShowCase\Index.cshtml" />
     <Content Include="Areas\Portal\Views\Shared\_HomeLayout.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Areas\Management\Views\Shared\ConfirmDelete.cshtml" />

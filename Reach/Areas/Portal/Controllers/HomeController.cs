@@ -1,4 +1,5 @@
-﻿using Reach.Core;
+﻿using Reach.Controllers;
+using Reach.Core;
 using Reach.DAL;
 using Reach.Models;
 using Reach.Repository;
@@ -7,14 +8,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Reach.DTO;
 
 namespace Reach.Areas.Portal.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
+        readonly IRepository<Video> repo;
 
-        ReachContext db = new ReachContext();
-        readonly IRepository<Video> repo = new Repository<Video>();
+        public HomeController( IRepository<Video> repo)
+        {
+            this.repo = repo;
+        }
+
 
         [HttpGet]
         public ActionResult Index(int videoId = 0)
@@ -31,17 +37,10 @@ namespace Reach.Areas.Portal.Controllers
             // Vedio List
             var videoList = repo.GetAll().Where(x => x.Id != topVideo.Id).Take(4).OrderBy(x => x.Rank).ThenByDescending(x => x.CreateDate).ToList();
 
-            db.SaveChanges();
-
             ViewBag.VideoList = videoList;
 
             return View();
-        }
 
-        protected override void Dispose(bool disposing)
-        {
-            db.Dispose();
-            base.Dispose(disposing);
         }
     }
 }

@@ -13,16 +13,20 @@ namespace Reach
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-                
 
+            //routes.MapRoute(
+            //  name: "Default",
+            //  url: "{controller}/{action}/{id}",
+            //  defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
 
+            //  );
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
-                    namespaces: new[] { "Reach.Controllers" }
-            );
+              name: "Default",
+              url: "{controller}/{action}/{id}",
+              defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+              namespaces: new[] { "Reach.Areas.Portal.Controllers" }
+              ).DataTokens.Add("area", "Portal");
 
         }
     }

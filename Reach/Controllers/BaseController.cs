@@ -6,8 +6,7 @@ using System.Web.Mvc;
 
 namespace Reach.Controllers
 {
-    public abstract class BaseController : Controller
+    public class BaseController : Controller
     {
-
     }
 }
