@@ -1,5 +1,6 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var videoCount = @ViewBag.VideoCount;
 }
 
 
@@ -17,11 +18,11 @@
 
             <div id="menu">
                 <div class="panel list-group">
-                    <a href="#" class="list-group-item" data-toggle="collapse" data-target="#sm" data-parent="#menu">视频管理<span class="label label-info">5</span> <span class="glyphicon glyphicon-envelope pull-right"></span></a>
-                    <div id="sm" class="sublinks collapse">
-                        <a class="list-group-item small"><span class="glyphicon glyphicon-chevron-right "></span> inbox</a>
-                        <a class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span> sent</a>
-                    </div>
+                    <a href="#" class="list-group-item" data-toggle="collapse" data-target="#sm" data-parent="#menu">视频管理&nbsp;<span class="label label-info">@videoCount</span> <span class="glyphicon glyphicon-envelope pull-right"></span></a>
+                    @*<div id="sm" class="sublinks collapse">
+                            <a class="list-group-item small"><span class="glyphicon glyphicon-chevron-right "></span> inbox</a>
+                            <a class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span> sent</a>
+                        </div>*@
                     <a href="#" class="list-group-item" data-toggle="collapse" data-target="#sl" data-parent="#menu">站点设定<span class="glyphicon glyphicon-tag pull-right"></span></a>
                     <div id="sl" class="sublinks collapse">
                         <a href="#" class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span> Logo</a>

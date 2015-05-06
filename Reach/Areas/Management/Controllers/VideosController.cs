@@ -21,9 +21,9 @@ namespace Reach.Areas.Management.Controllers
         }
 
         public ActionResult Index(int page = 1)
-        {        
-
+        {
             var pageContent = service.GetAll().ToList().ToPagedList(page, 5);
+            ViewBag.VideoCount = service.GetAll().Count();
 
             return View(pageContent);
         }

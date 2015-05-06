@@ -165,6 +165,7 @@
     <Compile Include="Core\IUserService.cs" />
     <Compile Include="Core\IFormsAuthentication.cs" />
     <Compile Include="Mappers\VideoMapper.cs" />
+    <Compile Include="Models\WebsiteInfo.cs" />
     <Compile Include="WindsorControllerFactory.cs" />
     <Compile Include="DAL\ReachContext.cs" />
     <Compile Include="DAL\ReachInitializer.cs" />
