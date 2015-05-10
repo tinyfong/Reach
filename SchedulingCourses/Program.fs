@@ -1,4 +1,4 @@
-﻿    let s1 =seq{1..5}
-    let s2=seq{2..2..10}
+﻿    let isDivisibleBy number elem =elem % number =0
 
-    if  Seq.forall2(fun x y ->x*2=y)  s1 s2 then printfn "OK"
+    let result=Seq.find(fun n-> isDivisibleBy 6 n)[1..100]
+    printfn "%d" result
