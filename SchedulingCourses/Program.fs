@@ -1,4 +1,6 @@
-﻿    let isDivisibleBy number elem =elem % number =0
+﻿
+    let sum x y z=x+y+z
+    let increaseOne2=sum 1
+    ;;
 
-    let result=Seq.find(fun n-> isDivisibleBy 6 n)[1..100]
-    printfn "%d" result
+    let r=  increaseOne2 4 1
