@@ -108,6 +108,15 @@ namespace Reach.DAL
 
             #endregion
 
+
+            #region Add WebsiteInfo
+            var w1 = new WebsiteInfo()
+            {
+                ContactUs = "Hello World"
+            };
+            context.WebsiteInfo.Add(w1);
+            #endregion
+
             context.SaveChanges();
         }
 

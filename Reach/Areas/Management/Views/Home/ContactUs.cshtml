@@ -1,0 +1,21 @@
+﻿@model HtmlInput
+@{
+    ViewBag.Title = "ContactUs";
+    Layout = "~/Areas/Management/Views/Shared/_AdminLayout.cshtml";
+}
+
+<script>tinymce.init({ selector: 'textarea' });</script>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div>
+        @Html.TextAreaFor(x => x.HtmlContent)
+    </div>
+
+    <div class="text-center">
+        <button type="submit" class="btn btn-default">保存更改</button>
+    </div>
+}
+

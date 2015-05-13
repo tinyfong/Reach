@@ -12,10 +12,10 @@ using PagedList;
 namespace Reach.Areas.Management.Controllers
 {
 
-    public class HomeController : CruderController<Video, YoukuVideoInput>
+    public class HomeController : CruderController<WebsiteInfo, WebsiteInfoInput>
     {
 
-        public HomeController(ICrudService<Video> service, IMapper<Video, YoukuVideoInput> v)
+        public HomeController(ICrudService<WebsiteInfo> service, IMapper<WebsiteInfo, WebsiteInfoInput> v)
             : base(service, v)
         {
 
@@ -65,6 +65,17 @@ namespace Reach.Areas.Management.Controllers
         public ActionResult Lyubomir()
         {
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult ContactUs()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ContactUs(WebsiteInfoInput input)
+        {
+            return View();
         }
     }
 }

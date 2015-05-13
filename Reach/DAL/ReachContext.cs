@@ -19,6 +19,8 @@ namespace Reach.DAL
 
         public DbSet<User> UserProfiles { get; set; }
 
+        public DbSet<WebsiteInfo> WebsiteInfo { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

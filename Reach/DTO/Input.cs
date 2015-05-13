@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace Reach.DTO
 {
@@ -46,5 +47,11 @@ namespace Reach.DTO
     public class DeleteInput : Input
     {
 
+    }
+
+    public class WebsiteInfoInput : Input
+    {
+        [AllowHtml]
+        public string HtmlContent { get; set; }
     }
 }
