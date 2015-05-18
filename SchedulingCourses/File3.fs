@@ -1,4 +1,4 @@
-﻿namespace File3
+﻿module File3
 
 type Point2D(xValue: double, yValue: double)=class
     static let mutable count = 0
