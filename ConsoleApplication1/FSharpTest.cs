@@ -12,15 +12,21 @@ namespace ConsoleApplication1
     {
         internal void Run()
         {
-            var myValue = new MyClass();
-            myValue.PrintValue(FSharpOption<int>.None);
-            myValue.PrintValue(new FSharpOption<int>(1));
+            var myEventClass2 = new File5.MyClassWithEvent();
+            myEventClass2.Event += MyHandler2;
+            myEventClass2.RaiseEvent("Hello world");
 
-            myValue.PrintValue2(2);
-            myValue.PrintValue2();
-            myValue.PrintValue2(3, "three");
 
         }
+
+        private void MyHandler2(object sender, Tuple<File5.MyClassWithEvent, string> args)
+        {
+         
+        }
+
+      
+
+       
 
      
     }
