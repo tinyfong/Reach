@@ -46,11 +46,15 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SQLDataConnection1.fs" />
+    <Compile Include="SQLEntityConnection1.fs" />
+    <Compile Include="InMemoryTable.fs" />
     <Compile Include="Program.fs" />
     <None Include="App.config" />
   </ItemGroup>
