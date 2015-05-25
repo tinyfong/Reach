@@ -31,6 +31,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ConsoleApplication2", "Cons
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpDesignPattern", "FSharpDesignPattern\FSharpDesignPattern.fsproj", "{9E837D4E-84A5-4508-A043-971B785A07F1}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TypeProvider", "TypeProvider\TypeProvider.fsproj", "{359C9227-73BE-4FBB-A489-B38A6377E35E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{9E837D4E-84A5-4508-A043-971B785A07F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E837D4E-84A5-4508-A043-971B785A07F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E837D4E-84A5-4508-A043-971B785A07F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{359C9227-73BE-4FBB-A489-B38A6377E35E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{359C9227-73BE-4FBB-A489-B38A6377E35E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{359C9227-73BE-4FBB-A489-B38A6377E35E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{359C9227-73BE-4FBB-A489-B38A6377E35E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

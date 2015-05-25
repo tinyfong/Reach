@@ -15,6 +15,10 @@ let studentTable = [
     Student(Id = 1, Name = "Anita", Age = Nullable(22));
     Student(Id = 2, Name = "Kata", Age = Nullable(22))
     Student(Id = 3, Name = "Brent", Age = Nullable(23))
-    Student(Id = 4, Name = "LIsa", Age = Nullable(23))
+    Student(Id = 4, Name = "Lisa", Age = Nullable(23))
     Student(Id = 5, Name = "Mark", Age = Nullable(24))].AsQueryable()
 
+let internal q17 = query {
+    for student in studentTable do
+    select student.Name
+    nth 3}

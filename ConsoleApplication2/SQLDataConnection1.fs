@@ -16,6 +16,7 @@ open Microsoft.FSharp.Linq.NullableOperators
 type SqlConnection = SqlDataConnection<ConnectionString = @"Data Source=(localdb)\v11.0;Initial Catalog=Institute;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False", StoredProcedures=false>
 
 let db = SqlConnection.GetDataContext()
+let showResult query = query |> Seq.iter(printfn "%A")
 
 let internal q0 = query {
     for n in db.Course do
@@ -26,7 +27,6 @@ let internal q1 = query {
     for n in db.Course.AsEnumerable() do
     select (sprintf "course name = %s" n.CourseName) }
 
-let showResult query = query |> Seq.iter(printfn "%A")
 
 showResult q1
 
@@ -68,9 +68,9 @@ let result =
 let internal q5 = query {
     for student in db.Student do
     leftOuterJoin selection in db.CourseSelection on
-        (student.StudentId =? selection.CourseId) into result
-    for selection in result do
-    select (student.Name, selection.Course)
+        (student.StudentId = selection.StudentId) into result
+    for selection1 in result do
+    select (student.Name)
     }
 
 showResult q5
@@ -86,3 +86,52 @@ let q6 = query {
 
 showResult q6
 
+let internal q4 = query {
+    for n in db.Student do 
+    sortByDescending n.Name 
+  
+    select n.Name }
+showResult q4
+
+let internal q7 = query {
+    for student in db.Student do
+    groupBy student.Age into g
+    select (g.Key, g.Count())}
+
+showResult q7
+
+let internal q8 = query {
+    for student in db.Student do
+    groupValBy student.Name student.Age into g
+    select (g, g.Key, g.Count()) }
+
+showResult q8
+
+let internal q11 = query {
+    for student in db.Student do
+    sumByNullable student.Age}
+
+showResult [q11]
+
+let internal q15 = query {
+    for student in db.Student do
+    select student.Name
+    count }
+
+let internal q22 = query {
+    for student in db.Student do
+    all (SqlClient.SqlMethods.Like(student.Name, "L%"))}
+showResult [q22]
+
+let internal q23 = query {
+    for student in db.Student do
+    where (student.Name = "Lisa")
+    exactlyOne }
+showResult [q23.Name]
+
+let ids = query { for id in [1;2;3] do  select id}
+   
+let qq= query { 
+    for student in db.Student do
+    where (ids.Contains(student.StudentId))
+    select student }
