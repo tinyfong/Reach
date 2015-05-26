@@ -15,12 +15,12 @@ type public TypeProvider1() as this =
     let newT = ProvidedTypeDefinition(thisAssembly, rootNamespace, "TPTestType",Some baseTy)
 
     let m = ProvidedMethod(
-        methodName = "methodName",
-        parameters = [], 
-        returnType = typeof<int>,
-        IsStaticMethod = false,
-        InvokeCode = fun args ->
-            <@@ 1+1 @@>
+                methodName = "methodName",
+                parameters = [], 
+                returnType = typeof<int>,
+                IsStaticMethod = false,
+                InvokeCode = fun args ->
+                    <@@ 1+1 @@>
         )
 
     let ctor = ProvidedConstructor(parameters = [], InvokeCode = fun args -> <@@ (* base class initialization or null*) () @@>)
