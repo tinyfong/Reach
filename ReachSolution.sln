@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcApplication1", "MvcAppli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcApplication1.Tests", "MvcApplication1.Tests\MvcApplication1.Tests.csproj", "{F31797EB-2E79-49A1-B756-808BBF4C7D9A}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "RegularExpressionTypeProvider", "RegularExpressionTypeProvider\RegularExpressionTypeProvider.fsproj", "{56442DE7-5258-48F0-85A8-DD5954886077}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{F31797EB-2E79-49A1-B756-808BBF4C7D9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F31797EB-2E79-49A1-B756-808BBF4C7D9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F31797EB-2E79-49A1-B756-808BBF4C7D9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56442DE7-5258-48F0-85A8-DD5954886077}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56442DE7-5258-48F0-85A8-DD5954886077}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56442DE7-5258-48F0-85A8-DD5954886077}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56442DE7-5258-48F0-85A8-DD5954886077}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
