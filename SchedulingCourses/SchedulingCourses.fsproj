@@ -63,6 +63,7 @@
     <Compile Include="File6.fs" />
     <None Include="App.config" />
     <Compile Include="Program.fs" />
+    <Compile Include="File7.fs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ForFSharpInvoking\ForFSharpInvoking.csproj">

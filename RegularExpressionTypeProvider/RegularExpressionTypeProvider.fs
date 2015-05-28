@@ -16,6 +16,7 @@ type public TypeProvider1() as this=
     let newT = ProvidedTypeDefinition(thisAssembly, rootNamespace, "RegularExpressionTypeProvider", Some baseTy)
 
     let staticParams = [ProvidedStaticParameter("pattern",typeof<string>)]
+
     do newT.DefineStaticParameters(
             parameters = staticParams,
             instantiationFunction = (fun typeName parameterValues ->
@@ -28,6 +29,7 @@ type public TypeProvider1() as this=
                                 Some baseTy,
                                 HideObjectMethods = true)
                     let r = System.Text.RegularExpressions.Regex(pattern)
+
                     let m = ProvidedMethod(
                                 methodName = "IsMatch",
                                 parameters = [ProvidedParameter("input", typeof<string>)],
