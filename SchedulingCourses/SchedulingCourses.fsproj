@@ -61,9 +61,11 @@
     <Compile Include="File4.fs" />
     <Compile Include="File5.fs" />
     <Compile Include="File6.fs" />
+    <Compile Include="File7.fs" />
+    <Compile Include="File8.fs" />
+    <Compile Include="File9.fs" />
     <None Include="App.config" />
     <Compile Include="Program.fs" />
-    <Compile Include="File7.fs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ForFSharpInvoking\ForFSharpInvoking.csproj">

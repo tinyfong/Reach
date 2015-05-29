@@ -13,14 +13,8 @@ namespace MvcApplication2.Controllers
 
         public ActionResult Index()
         {
-            return RedirectToAction("Covan");
-            //return View();
-            
-        }
-
-        public ActionResult Covan()
-        {
             return View();
         }
+
     }
 }
