@@ -64,6 +64,7 @@
     <Compile Include="File7.fs" />
     <Compile Include="File8.fs" />
     <Compile Include="File9.fs" />
+    <Compile Include="File10.fs" />
     <None Include="App.config" />
     <Compile Include="Program.fs" />
   </ItemGroup>
