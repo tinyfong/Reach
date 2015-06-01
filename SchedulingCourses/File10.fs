@@ -48,6 +48,35 @@ type AccountState =
 [<Measure>] type USD
 [<Measure>] type CND
 
+type Account<[<Measure>] 'u>() =
+    let mutable balance = 0.0<_>
+    member this.State
+        with get() =
+            match balance with
+            | _ when balance <= 0.0<_> -> AccountState.Overdrawn
+            | _ when balance > 0.0<_> && balance < 10000.0<_> -> AccountState.Silver
+            | _ -> AccountState.Gold
 
+    member this.PayInterest() =
+        let interest = 
+            match this.State with
+                | AccountState.Overdrawn -> 0.
+                | AccountState.Silver -> 0.01
+                | AccountState.Gold -> 0.02
+        interest * balance
 
+    member this.Deposit x = balance <- balance + x
+    member this.Withdraw x = balance <- balance - x
 
+let measureSample() =
+    let account = Account<USD>()
+    let USDAmount = LanguagePrimitives.FloatWithMeasure 10000.
+    account.Deposit USDAmount
+    printfn "US interest = %A" (account.PayInterest())
+    
+    let canadaAccount = Account<CND>()
+    let CADAmount : float<CND> = LanguagePrimitives.FloatWithMeasure 10000.
+    canadaAccount.Deposit CADAmount
+    printfn "Canadian interest = %A" (canadaAccount.PayInterest())
+
+measureSample()
