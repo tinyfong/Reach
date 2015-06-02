@@ -39,3 +39,4 @@ let lastestNews = query {
 }
 
 let news = lastestNews |> Seq.toArray
+
