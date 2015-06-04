@@ -73,6 +73,9 @@
     <Compile Include="File12.fs" />
     <Compile Include="File13.fs" />
     <Compile Include="File14.fs" />
+    <Compile Include="File15.fs" />
+    <Compile Include="File16.fs" />
+    <Compile Include="File17.fs" />
     <None Include="App.config" />
     <Compile Include="Program.fs" />
   </ItemGroup>

@@ -192,3 +192,36 @@ let newYearresolution date =
     | SecondQuarter _-> printfn "beef is good for summer BBQ"
     | ThirdQuarter _-> printfn "maybe I should diet?"
     | FourthQuarter _-> printfn "Mom's apple pie is wonderful"
+
+// Parameterized active pattern wxample
+open System.Text.RegularExpressions
+
+let (|RegexMatch|_|) (pattern:string) (input:string) =
+    let regex = Regex(pattern).Match(input)
+    if regex.Success then Some(List.tail [ for x in regex.Groups -> x.Value ])
+    else None
+
+let parsePhoneNumber str =
+    match str with
+    | RegexMatch "(\d{3})-(\d{3})-(\d{4})" out -> System.String.Join("", out)
+//    | RegexMatch "(\d{3})-(\d{3})-(\d{4})" out -> System.String.Join("", out)
+    | RegexMatch "(\d{3})-(\d{3})(\d{4})" out -> System.String.Join("", out)
+    | _ -> "Not supported format"
+
+let r1 = parsePhoneNumber "425-123-1234"
+let r2 = parsePhoneNumber "425-1231234"
+
+let r3 = parsePhoneNumber"(425)123-1234"
+
+// Parameterized active pattern with AND pattern example
+let (|Divisible|_|) x y =
+    if y % x = 0 then
+        Some Divisible
+    else
+        None
+
+let f2 = function
+    | Divisible 2 & Divisible 3 -> "divisible by 6"
+    | _ -> "other"
+
+let r4 = f2 12
