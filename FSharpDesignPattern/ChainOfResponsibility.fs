@@ -1,5 +1,7 @@
 ﻿module ChainOfResponsibility
 
+// Chain of responsibility pattern
+
 type Record = {
     Name : string
     Age : int

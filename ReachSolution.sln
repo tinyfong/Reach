@@ -35,6 +35,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcApplication1.Tests", "Mv
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "RegularExpressionTypeProvider", "RegularExpressionTypeProvider\RegularExpressionTypeProvider.fsproj", "{56442DE7-5258-48F0-85A8-DD5954886077}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Win8UI", "Win8UI\Win8UI.csproj", "{139FF2C4-F171-43DD-B7D2-E73A6252376C}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpPortable", "FSharpPortable\FSharpPortable.fsproj", "{56E52F67-AE12-4458-A428-A7FFCBD25C8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +97,14 @@ Global
 		{56442DE7-5258-48F0-85A8-DD5954886077}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56442DE7-5258-48F0-85A8-DD5954886077}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56442DE7-5258-48F0-85A8-DD5954886077}.Release|Any CPU.Build.0 = Release|Any CPU
+		{139FF2C4-F171-43DD-B7D2-E73A6252376C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{139FF2C4-F171-43DD-B7D2-E73A6252376C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{139FF2C4-F171-43DD-B7D2-E73A6252376C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{139FF2C4-F171-43DD-B7D2-E73A6252376C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56E52F67-AE12-4458-A428-A7FFCBD25C8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56E52F67-AE12-4458-A428-A7FFCBD25C8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56E52F67-AE12-4458-A428-A7FFCBD25C8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56E52F67-AE12-4458-A428-A7FFCBD25C8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
