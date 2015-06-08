@@ -1,7 +1,6 @@
 ﻿module ChainOfResponsibility
 
 // Chain of responsibility pattern
-
 type Record = {
     Name : string
     Age : int
@@ -28,3 +27,19 @@ let chainOfResponsibility() =
 
     printfn "John's result = %b" (chainOfResponsibility(john, true) |> snd)
     printfn "Dan's result = %b" (chainOfResponsibility(john, true) |> snd)
+
+
+// Chain of reponsibility sample using pipelining
+let chainTemplate processFunction canContinue s =
+    if canContinue s then
+        processFunction s
+    else s
+
+let canContinueF _ = true
+let processF x = x + 1
+
+let chainFunction = chainTemplate processF canContinueF
+
+let s = 1 |> chainFunction |> chainFunction
+
+printfn "%A" s

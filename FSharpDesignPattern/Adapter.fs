@@ -1,5 +1,6 @@
 ﻿module Adapter
 
+// 
 type Cat() =
     member this.Walk() = printfn "cat walks"
 
