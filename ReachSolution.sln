@@ -17,27 +17,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reach.AccessVideoSupplier",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reach.AccessVideoSupplier.Test", "Reach.AccessVideoSupplier.Test\Reach.AccessVideoSupplier.Test.csproj", "{2D22973C-7677-4288-B00F-7FF374D15778}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SchedulingCourses", "SchedulingCourses\SchedulingCourses.fsproj", "{A87A531C-A904-4FE0-A783-F46825B63059}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForFSharpInvoking", "ForFSharpInvoking\ForFSharpInvoking.csproj", "{6E008685-4086-4459-BD78-40AE469C67C8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcApplication2", "MvcApplication2\MvcApplication2.csproj", "{3AD25D37-A7E6-456A-97C7-823D2446BD94}"
-EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ConsoleApplication2", "ConsoleApplication2\ConsoleApplication2.fsproj", "{7ACE9B3B-E7E6-401A-8A4F-14BFC3A585E8}"
-EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpDesignPattern", "FSharpDesignPattern\FSharpDesignPattern.fsproj", "{9E837D4E-84A5-4508-A043-971B785A07F1}"
-EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "HelloWorldTypeProvider", "HelloWorldTypeProvider\HelloWorldTypeProvider.fsproj", "{43A79460-1539-42A6-B553-FE16BA5B4B52}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcApplication1", "MvcApplication1\MvcApplication1.csproj", "{F8F6825B-B7AE-4D57-8A3F-FB59A891B7F8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcApplication1.Tests", "MvcApplication1.Tests\MvcApplication1.Tests.csproj", "{F31797EB-2E79-49A1-B756-808BBF4C7D9A}"
-EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "RegularExpressionTypeProvider", "RegularExpressionTypeProvider\RegularExpressionTypeProvider.fsproj", "{56442DE7-5258-48F0-85A8-DD5954886077}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Win8UI", "Win8UI\Win8UI.csproj", "{139FF2C4-F171-43DD-B7D2-E73A6252376C}"
-EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpPortable", "FSharpPortable\FSharpPortable.fsproj", "{56E52F67-AE12-4458-A428-A7FFCBD25C8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,30 +43,6 @@ Global
 		{2D22973C-7677-4288-B00F-7FF374D15778}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D22973C-7677-4288-B00F-7FF374D15778}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D22973C-7677-4288-B00F-7FF374D15778}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A87A531C-A904-4FE0-A783-F46825B63059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A87A531C-A904-4FE0-A783-F46825B63059}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A87A531C-A904-4FE0-A783-F46825B63059}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A87A531C-A904-4FE0-A783-F46825B63059}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6E008685-4086-4459-BD78-40AE469C67C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6E008685-4086-4459-BD78-40AE469C67C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6E008685-4086-4459-BD78-40AE469C67C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6E008685-4086-4459-BD78-40AE469C67C8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3AD25D37-A7E6-456A-97C7-823D2446BD94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3AD25D37-A7E6-456A-97C7-823D2446BD94}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3AD25D37-A7E6-456A-97C7-823D2446BD94}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3AD25D37-A7E6-456A-97C7-823D2446BD94}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7ACE9B3B-E7E6-401A-8A4F-14BFC3A585E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7ACE9B3B-E7E6-401A-8A4F-14BFC3A585E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7ACE9B3B-E7E6-401A-8A4F-14BFC3A585E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7ACE9B3B-E7E6-401A-8A4F-14BFC3A585E8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9E837D4E-84A5-4508-A043-971B785A07F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9E837D4E-84A5-4508-A043-971B785A07F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9E837D4E-84A5-4508-A043-971B785A07F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9E837D4E-84A5-4508-A043-971B785A07F1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{43A79460-1539-42A6-B553-FE16BA5B4B52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{43A79460-1539-42A6-B553-FE16BA5B4B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{43A79460-1539-42A6-B553-FE16BA5B4B52}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{43A79460-1539-42A6-B553-FE16BA5B4B52}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{F8F6825B-B7AE-4D57-8A3F-FB59A891B7F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F8F6825B-B7AE-4D57-8A3F-FB59A891B7F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8F6825B-B7AE-4D57-8A3F-FB59A891B7F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -93,18 +51,6 @@ Global
 		{F31797EB-2E79-49A1-B756-808BBF4C7D9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F31797EB-2E79-49A1-B756-808BBF4C7D9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F31797EB-2E79-49A1-B756-808BBF4C7D9A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{56442DE7-5258-48F0-85A8-DD5954886077}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{56442DE7-5258-48F0-85A8-DD5954886077}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{56442DE7-5258-48F0-85A8-DD5954886077}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{56442DE7-5258-48F0-85A8-DD5954886077}.Release|Any CPU.Build.0 = Release|Any CPU
-		{139FF2C4-F171-43DD-B7D2-E73A6252376C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{139FF2C4-F171-43DD-B7D2-E73A6252376C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{139FF2C4-F171-43DD-B7D2-E73A6252376C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{139FF2C4-F171-43DD-B7D2-E73A6252376C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{56E52F67-AE12-4458-A428-A7FFCBD25C8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{56E52F67-AE12-4458-A428-A7FFCBD25C8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{56E52F67-AE12-4458-A428-A7FFCBD25C8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{56E52F67-AE12-4458-A428-A7FFCBD25C8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
