@@ -10,8 +10,8 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            var t = new FSharpTest();
-            t.Run();
+            //var t = new FSharpTest();
+            //t.Run();
 
             Console.ReadLine();
         }

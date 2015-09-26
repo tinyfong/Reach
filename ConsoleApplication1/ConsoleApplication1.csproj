@@ -83,7 +83,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CodeFirstTest.cs" />
-    <Compile Include="FSharpTest.cs" />
     <Compile Include="IoCTests.cs" />
     <Compile Include="NewtonJsonTest.cs" />
     <Compile Include="Program.cs" />
